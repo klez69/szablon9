@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logowanie - Panel Administracyjny | Salon Fryzjerski Migdał</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --brown: #8b6d5c;
+        --light-brown: #a58d7f;
+        --cream: #f5f1e8;
+        --white: #ffffff;
+        --dark: #2d2a26;
+        --border-color: #e9ecef;
+        --border-radius: 6px;
+        --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      body {
+        background-color: var(--cream);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .login-container {
+        width: 100%;
+        max-width: 400px;
+        background-color: var(--white);
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        overflow: hidden;
+      }
+
+      .login-header {
+        background-color: var(--brown);
+        color: var(--white);
+        padding: 30px;
+        text-align: center;
+      }
+
+      .login-header h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 28px;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .login-header p {
+        font-size: 14px;
+        opacity: 0.9;
+      }
+
+      .login-form {
+        padding: 30px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--dark);
+      }
+
+      .input-group {
+        position: relative;
+      }
+
+      .input-group i {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        color: var(--light-brown);
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 12px 15px 12px 45px;
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius);
+        font-size: 14px;
+        transition: all 0.3s ease;
+      }
+
+      .input-group input:focus {
+        border-color: var(--brown);
+        box-shadow: 0 0 0 3px rgba(139, 109, 92, 0.1);
+        outline: none;
+      }
+
+      .forgot-password {
+        display: block;
+        text-align: right;
+        font-size: 14px;
+        color: var(--brown);
+        margin-bottom: 20px;
+        text-decoration: none;
+      }
+
+      .forgot-password:hover {
+        text-decoration: underline;
+      }
+
+      .login-btn {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        background-color: var(--brown);
+        color: var(--white);
+        border: none;
+        border-radius: var(--border-radius);
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .login-btn:hover {
+        background-color: var(--light-brown);
+      }
+
+      .login-footer {
+        display: flex;
+        justify-content: center;
+        padding: 20px 30px;
+        background-color: var(--cream);
+        border-top: 1px solid var(--border-color);
+      }
+
+      .login-footer a {
+        color: var(--brown);
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .login-footer a:hover {
+        text-decoration: underline;
+      }
+
+      .error-message {
+        background-color: rgba(220, 53, 69, 0.1);
+        color: #dc3545;
+        padding: 10px;
+        border-radius: var(--border-radius);
+        font-size: 14px;
+        margin-bottom: 20px;
+        display: none;
+      }
+
+      .error-message.show {
+        display: block;
+      }
+
+      @media (max-width: 480px) {
+        .login-header {
+          padding: 20px;
+        }
+
+        .login-form {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-header">
+        <h1>Salon Fryzjerski Migdał</h1>
+        <p>Panel Administracyjny - Logowanie</p>
+      </div>
+      <div class="login-form">
+        <div class="error-message" id="error-message">
+          Nieprawidłowa nazwa użytkownika lub hasło. Spróbuj ponownie.
+        </div>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="username">Nazwa użytkownika</label>
+            <div class="input-group">
+              <i class="fas fa-user"></i>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Wprowadź nazwę użytkownika"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password">Hasło</label>
+            <div class="input-group">
+              <i class="fas fa-lock"></i>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Wprowadź hasło"
+                required
+              />
+            </div>
+          </div>
+          <a href="#" class="forgot-password">Zapomniałeś hasła?</a>
+          <button type="submit" class="login-btn">Zaloguj się</button>
+        </form>
+      </div>
+      <div class="login-footer">
+        <a href="../index.html">Powrót do strony głównej</a>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("login-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const username = document.getElementById("username").value.trim();
+          const password = document.getElementById("password").value;
+
+          console.log("Próba logowania:", username);
+
+          // Prosta weryfikacja - w rzeczywistości należy to zrobić na serwerze
+          if (username.toLowerCase() === "admin" && password === "admin123") {
+            console.log("Logowanie udane, przekierowuję do dashboardu");
+
+            // Zapisujemy informację o zalogowaniu
+            localStorage.setItem("adminLoggedIn", "true");
+
+            // Uproszczone przekierowanie
+            try {
+              window.location.href = "dashboard.html";
+            } catch (error) {
+              console.error("Błąd przekierowania:", error);
+              alert(
+                "Logowanie udane. Kliknij OK, aby przejść do panelu administracyjnego."
+              );
+              window.location = "dashboard.html";
+            }
+          } else {
+            console.log("Logowanie nieudane", username, password);
+            document.getElementById("error-message").classList.add("show");
+            document.getElementById("error-message").textContent =
+              "Nieprawidłowa nazwa użytkownika lub hasło. Poprawne dane to: admin / admin123";
+
+            document.getElementById("password").value = "";
+          }
+        });
+
+      window.onload = function () {
+        console.log("Strona logowania załadowana");
+        document.getElementById("error-message").classList.remove("show");
+
+        // Wylogowanie przy wejściu na stronę logowania
+        localStorage.removeItem("adminLoggedIn");
+      };
+    </script>
+  </body>
+</html>
