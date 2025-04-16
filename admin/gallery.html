@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Panel Administracyjny - Zarządzanie Galerią | Salon Migdał</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+		<style>
+			:root {
+				--brown: #8b6d5c;
+				--light-brown: #a58d7f;
+				--cream: #f5f1e8;
+				--white: #ffffff;
+				--dark: #2d2a26;
+			}
+
+			.btn-primary {
+				background-color: var(--brown);
+				color: white;
+			}
+
+			.btn-primary:hover {
+				background-color: var(--light-brown);
+			}
+
+			.bg-brown {
+				background-color: var(--brown);
+			}
+
+			.text-brown {
+				color: var(--brown);
+			}
+
+			.border-brown {
+				border-color: var(--brown);
+			}
+		</style>
+	</head>
+	<body class="bg-gray-50">
+		<header class="bg-brown text-white shadow-md">
+			<div class="container mx-auto px-4 py-4">
+				<div class="flex justify-between items-center">
+					<h1 class="text-2xl font-bold">Panel Administracyjny Salon Migdał</h1>
+					<a href="../index.html" class="px-4 py-2 bg-white text-brown rounded hover:bg-gray-100 transition-all">
+						<i class="fas fa-home mr-2"></i>Powrót do strony
+					</a>
+				</div>
+			</div>
+		</header>
+
+		<main class="container mx-auto px-4 py-8">
+			<div class="flex flex-col lg:flex-row gap-8">
+				<!-- Sidebar Menu -->
+				<div class="lg:w-1/4">
+					<div class="bg-white rounded-lg shadow-md p-6">
+						<h2 class="text-xl font-semibold mb-4 text-brown">Menu</h2>
+						<nav>
+							<ul class="space-y-2">
+								<li>
+									<a href="index.html" class="block px-4 py-2 rounded hover:bg-cream transition-all">
+										<i class="fas fa-tachometer-alt mr-2"></i>Dashboard
+									</a>
+								</li>
+								<li>
+									<a
+										href="gallery.html"
+										class="block px-4 py-2 rounded bg-cream text-brown font-semibold transition-all"
+									>
+										<i class="fas fa-images mr-2"></i>Zarządzanie Galerią
+									</a>
+								</li>
+								<li>
+									<a href="services.html" class="block px-4 py-2 rounded hover:bg-cream transition-all">
+										<i class="fas fa-cut mr-2"></i>Usługi i Cennik
+									</a>
+								</li>
+								<li>
+									<a href="settings.html" class="block px-4 py-2 rounded hover:bg-cream transition-all">
+										<i class="fas fa-cog mr-2"></i>Ustawienia
+									</a>
+								</li>
+								<li>
+									<a href="login.html" class="block px-4 py-2 rounded hover:bg-cream transition-all">
+										<i class="fas fa-sign-out-alt mr-2"></i>Wyloguj
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+
+				<!-- Main Content -->
+				<div class="lg:w-3/4">
+					<div class="bg-white rounded-lg shadow-md p-6 mb-6">
+						<div class="flex justify-between items-center mb-6">
+							<h2 class="text-2xl font-semibold text-brown">Zarządzanie Galerią</h2>
+							<button id="addNewItem" class="px-4 py-2 bg-brown text-white rounded hover:bg-light-brown transition-all">
+								<i class="fas fa-plus mr-2"></i>Dodaj nowe zdjęcie
+							</button>
+						</div>
+
+						<div class="mb-6">
+							<div class="flex gap-4 mb-4">
+								<button class="gallery-filter px-4 py-2 rounded border border-brown text-brown" data-filter="all">
+									Wszystkie
+								</button>
+								<button class="gallery-filter px-4 py-2 rounded border border-gray-300" data-filter="women">
+									Damskie
+								</button>
+								<button class="gallery-filter px-4 py-2 rounded border border-gray-300" data-filter="men">
+									Męskie
+								</button>
+								<button class="gallery-filter px-4 py-2 rounded border border-gray-300" data-filter="color">
+									Koloryzacja
+								</button>
+								<button class="gallery-filter px-4 py-2 rounded border border-gray-300" data-filter="special">
+									Okolicznościowe
+								</button>
+							</div>
+						</div>
+
+						<!-- Gallery Items -->
+						<div id="gallery-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+							<!-- Items will be loaded dynamically from baza.js -->
+							<div class="text-center py-12 col-span-full text-gray-500">
+								<i class="fas fa-spinner fa-spin text-3xl mb-4"></i>
+								<p>Ładowanie galerii...</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Save Changes Button -->
+					<div class="bg-white rounded-lg shadow-md p-6">
+						<div class="flex justify-between items-center">
+							<div>
+								<p class="text-sm text-gray-500">Ostatnia aktualizacja: <span id="last-update">Nigdy</span></p>
+							</div>
+							<div class="flex gap-4">
+								<button
+									id="revertChanges"
+									class="px-4 py-2 border border-gray-300 rounded text-gray-700 hover:bg-gray-100 transition-all"
+								>
+									<i class="fas fa-undo mr-2"></i>Cofnij zmiany
+								</button>
+								<button
+									id="saveChanges"
+									class="px-6 py-2 bg-brown text-white rounded hover:bg-light-brown transition-all"
+								>
+									<i class="fas fa-save mr-2"></i>Zapisz wszystkie zmiany
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- Item Edit Modal -->
+		<div id="editModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+			<div class="bg-white rounded-lg shadow-lg w-full max-w-2xl p-6 max-h-90vh overflow-y-auto">
+				<div class="flex justify-between items-center mb-6">
+					<h3 class="text-xl font-semibold text-brown">Edycja elementu galerii</h3>
+					<button id="closeModal" class="text-gray-500 hover:text-gray-700">
+						<i class="fas fa-times text-xl"></i>
+					</button>
+				</div>
+
+				<form id="editForm" class="space-y-4">
+					<input type="hidden" id="item-id" />
+
+					<div>
+						<label for="item-title" class="block text-sm font-medium text-gray-700 mb-1">Tytuł</label>
+						<input type="text" id="item-title" class="w-full px-4 py-2 border border-gray-300 rounded" required />
+					</div>
+
+					<div>
+						<label for="item-description" class="block text-sm font-medium text-gray-700 mb-1">Opis</label>
+						<input type="text" id="item-description" class="w-full px-4 py-2 border border-gray-300 rounded" required />
+					</div>
+
+					<div>
+						<label for="item-category" class="block text-sm font-medium text-gray-700 mb-1">Kategoria</label>
+						<select id="item-category" class="w-full px-4 py-2 border border-gray-300 rounded" required>
+							<option value="women">Damskie</option>
+							<option value="men">Męskie</option>
+							<option value="color">Koloryzacja</option>
+							<option value="special">Okolicznościowe</option>
+						</select>
+					</div>
+
+					<div>
+						<label for="item-image" class="block text-sm font-medium text-gray-700 mb-1">Ścieżka do zdjęcia</label>
+						<div class="flex">
+							<input
+								type="text"
+								id="item-image"
+								class="w-3/4 px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2"
+								required
+							/>
+							<button
+								type="button"
+								id="upload-image-btn"
+								class="w-1/4 bg-gray-200 hover:bg-gray-300 text-gray-700 py-2 px-3 rounded-r-md transition-all"
+							>
+								<i class="fas fa-upload mr-1"></i> Prześlij
+							</button>
+						</div>
+						<p class="text-xs text-gray-500 mt-1">Przykład: images/4.jpg</p>
+					</div>
+
+					<div>
+						<label for="item-alt-text" class="block text-sm font-medium text-gray-700 mb-1"
+							>Tekst alternatywny (SEO)</label
+						>
+						<textarea id="item-alt-text" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded"></textarea>
+					</div>
+
+					<div class="pt-4 border-t border-gray-200 flex justify-between">
+						<button
+							type="button"
+							id="deleteItem"
+							class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-all"
+						>
+							<i class="fas fa-trash mr-2"></i>Usuń element
+						</button>
+
+						<div class="flex gap-3">
+							<button type="button" id="cancelEdit" class="px-4 py-2 border border-gray-300 rounded text-gray-700">
+								Anuluj
+							</button>
+							<button type="submit" class="px-6 py-2 bg-brown text-white rounded hover:bg-light-brown">
+								Zapisz zmiany
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- Image Upload Modal -->
+		<div id="uploadModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+			<div class="bg-white rounded-lg shadow-lg w-full max-w-md p-6">
+				<div class="flex justify-between items-center mb-6">
+					<h3 class="text-xl font-semibold text-brown">Prześlij zdjęcie</h3>
+					<button id="closeUploadModal" class="text-gray-500 hover:text-gray-700">
+						<i class="fas fa-times text-xl"></i>
+					</button>
+				</div>
+
+				<form id="uploadForm" class="space-y-4">
+					<div class="text-center py-4 border-2 border-dashed border-gray-300 rounded-md bg-gray-50" id="dropZone">
+						<i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-2"></i>
+						<p class="text-gray-500 mb-2">Przeciągnij i upuść zdjęcie tutaj</p>
+						<p class="text-gray-400 text-sm mb-3">lub</p>
+						<input type="file" id="fileInput" class="hidden" accept="image/*" />
+						<button
+							type="button"
+							id="browseButton"
+							class="px-4 py-2 bg-brown text-white rounded hover:bg-light-brown transition-all"
+						>
+							<i class="fas fa-folder-open mr-2"></i>Wybierz plik
+						</button>
+					</div>
+
+					<div class="border rounded-md p-4 hidden" id="previewContainer">
+						<div class="flex justify-between items-center mb-2">
+							<h4 class="font-medium">Podgląd zdjęcia</h4>
+							<button type="button" id="removePreview" class="text-red-500 hover:text-red-700">
+								<i class="fas fa-times"></i>
+							</button>
+						</div>
+						<div class="relative aspect-ratio-4/3 overflow-hidden rounded border bg-gray-100">
+							<img id="imagePreview" class="w-full h-full object-contain" src="" alt="Podgląd" />
+						</div>
+						<p class="text-sm text-gray-500 mt-2 break-all" id="fileInfo"></p>
+					</div>
+
+					<div class="pt-4 border-t border-gray-200 flex justify-end">
+						<button type="button" id="cancelUpload" class="px-4 py-2 border border-gray-300 rounded text-gray-700 mr-3">
+							Anuluj
+						</button>
+						<button
+							type="submit"
+							id="submitUpload"
+							class="px-6 py-2 bg-brown text-white rounded hover:bg-light-brown transition-all"
+							disabled
+						>
+							<i class="fas fa-upload mr-2"></i>Prześlij zdjęcie
+						</button>
+					</div>
+				</form>
+
+				<div id="uploadProgress" class="hidden mt-4">
+					<div class="relative pt-1">
+						<div class="flex mb-2 items-center justify-between">
+							<div>
+								<span
+									class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-brown bg-brown bg-opacity-10"
+								>
+									Przesyłanie
+								</span>
+							</div>
+							<div class="text-right">
+								<span class="text-xs font-semibold inline-block text-brown" id="progressPercentage">0%</span>
+							</div>
+						</div>
+						<div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-brown bg-opacity-10">
+							<div
+								id="progressBar"
+								class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-brown"
+								style="width: 0%"
+							></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Scripts -->
+		<script src="../baza.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				// Pobierz dane galerii
+				let galleryData = []
+
+				// Inicjalizacja
+				function init() {
+					// Dodaj wskaźnik ładowania
+					const container = document.getElementById('gallery-container')
+					container.innerHTML = `
+            <div class="text-center py-12 col-span-full text-gray-500">
+              <i class="fas fa-spinner fa-spin text-3xl mb-4"></i>
+              <p>Ładowanie galerii...</p>
+            </div>
+          `
+
+					// Odrocz pobieranie danych, aby UI mogło się wyrenderować
+					setTimeout(() => {
+						loadGalleryData()
+							.then(data => {
+								galleryData = data
+								// Sprawdź ostatnią aktualizację
+								const lastUpdate = localStorage.getItem('galleryLastUpdate')
+								if (lastUpdate) {
+									document.getElementById('last-update').textContent = new Date(parseInt(lastUpdate)).toLocaleString()
+								}
+
+								// Renderuj galerię
+								renderGallery(galleryData)
+							})
+							.catch(error => {
+								console.error('Błąd podczas ładowania danych galerii:', error)
+								container.innerHTML = `
+                  <div class="text-center py-12 col-span-full text-red-500">
+                    <i class="fas fa-exclamation-triangle text-3xl mb-4"></i>
+                    <p>Wystąpił błąd podczas ładowania galerii.</p>
+                  </div>
+                `
+							})
+					}, 100)
+
+					// Dodaj nasłuchiwanie na przyciski filtrowania
+					initializeFilters()
+				}
+
+				// Funkcja asynchroniczna do pobierania danych galerii
+				function loadGalleryData() {
+					return new Promise((resolve, reject) => {
+						try {
+							// Użyj buforowanych danych jeśli są dostępne i nie są starsze niż 5 minut
+							const cachedData = localStorage.getItem('galleryDataCache')
+							const cacheTimestamp = localStorage.getItem('galleryDataCacheTime')
+
+							const now = Date.now()
+							const cacheAge = cacheTimestamp ? now - parseInt(cacheTimestamp) : Infinity
+							const cacheExpiry = 5 * 60 * 1000 // 5 minut
+
+							if (cachedData && cacheAge < cacheExpiry) {
+								console.log('Używam buforowanych danych galerii')
+								return resolve(JSON.parse(cachedData))
+							}
+
+							// Pobierz dane z baza.js
+							let data = []
+
+							if (typeof getGalleryData === 'function') {
+								data = getGalleryData()
+							} else if (window.salonGalleryData) {
+								data = window.salonGalleryData
+							} else {
+								// Jeśli nie ma funkcji ani globalnej zmiennej
+								const storedData = localStorage.getItem('galleryData')
+								if (storedData) {
+									try {
+										data = JSON.parse(storedData)
+									} catch (error) {
+										console.error('Błąd podczas parsowania danych galerii:', error)
+										data = []
+									}
+								}
+							}
+
+							// Zapisz dane w cache
+							localStorage.setItem('galleryDataCache', JSON.stringify(data))
+							localStorage.setItem('galleryDataCacheTime', now.toString())
+
+							resolve(data)
+						} catch (error) {
+							reject(error)
+						}
+					})
+				}
+
+				// Renderuj elementy galerii
+				function renderGallery(items, filter = 'all') {
+					const container = document.getElementById('gallery-container')
+					container.innerHTML = ''
+
+					// Filtruj elementy
+					const filteredItems = filter === 'all' ? items : items.filter(item => item.category === filter)
+
+					if (filteredItems.length === 0) {
+						container.innerHTML = `
+            <div class="text-center py-12 col-span-full text-gray-500">
+              <i class="fas fa-folder-open text-3xl mb-4"></i>
+              <p>Brak elementów w tej kategorii</p>
+            </div>
+          `
+						return
+					}
+
+					// Sortuj według ID
+					filteredItems.sort((a, b) => a.id - b.id)
+
+					// Dodaj elementy z opóźnieniem dla lepszej wydajności
+					const batchSize = 8
+					let currentIndex = 0
+
+					function addItemsBatch() {
+						const fragment = document.createDocumentFragment()
+						const endIndex = Math.min(currentIndex + batchSize, filteredItems.length)
+
+						for (let i = currentIndex; i < endIndex; i++) {
+							const item = filteredItems[i]
+							const card = createGalleryCard(item)
+							fragment.appendChild(card)
+						}
+
+						container.appendChild(fragment)
+						currentIndex = endIndex
+
+						if (currentIndex < filteredItems.length) {
+							// Dodaj kolejne elementy z małym opóźnieniem
+							setTimeout(addItemsBatch, 10)
+						}
+					}
+
+					// Rozpocznij dodawanie elementów
+					addItemsBatch()
+				}
+
+				// Funkcja tworząca pojedynczą kartę galerii
+				function createGalleryCard(item) {
+					const card = document.createElement('div')
+					card.className = 'bg-white rounded-lg shadow border hover:shadow-lg transition-all overflow-hidden'
+					card.setAttribute('data-id', item.id)
+
+					// Kategoria po polsku
+					const categoryLabels = {
+						women: 'Damskie',
+						men: 'Męskie',
+						color: 'Koloryzacja',
+						special: 'Okolicznościowe',
+					}
+
+					// Skróć opis alternatywny
+					const shortAltText =
+						item.altText && item.altText.length > 80 ? item.altText.substring(0, 80) + '...' : item.altText || ''
+
+					// Użyj leniwego ładowania obrazów
+					card.innerHTML = `
+          <div class="relative">
+            <img src="../${item.imageSrc}" alt="${item.title}" class="w-full h-48 object-cover" loading="lazy">
+            <span class="absolute top-2 right-2 bg-brown text-white text-xs px-2 py-1 rounded">
+              ${categoryLabels[item.category] || 'Inne'}
+            </span>
+          </div>
+          <div class="p-4">
+            <h3 class="font-semibold text-lg mb-1 text-brown">${item.title}</h3>
+            <p class="text-gray-600 text-sm mb-2">${item.description}</p>
+            <p class="text-gray-500 text-xs italic mb-4 truncate" title="${item.altText || ''}">
+              ${shortAltText}
+            </p>
+            <button class="edit-item-btn w-full py-2 text-center border border-brown text-brown rounded hover:bg-cream transition-all">
+              <i class="fas fa-edit mr-2"></i>Edytuj
+            </button>
+          </div>
+        `
+
+					// Dodaj obsługę kliknięcia przycisku edycji
+					card.querySelector('.edit-item-btn').addEventListener('click', () => {
+						openEditModal(item)
+					})
+
+					return card
+				}
+
+				// Inicjalizacja filtrów
+				function initializeFilters() {
+					const filterButtons = document.querySelectorAll('.gallery-filter')
+
+					filterButtons.forEach(button => {
+						button.addEventListener('click', function () {
+							// Usuń aktywną klasę
+							filterButtons.forEach(btn => {
+								btn.classList.remove('bg-brown', 'text-white')
+								btn.classList.add('border-gray-300')
+								btn.classList.remove('border-brown')
+							})
+
+							// Dodaj aktywną klasę
+							this.classList.add('bg-brown', 'text-white')
+							this.classList.remove('border-gray-300')
+							this.classList.add('border-brown')
+
+							// Renderuj filtrowane elementy
+							const filter = this.getAttribute('data-filter')
+							renderGallery(galleryData, filter)
+						})
+					})
+
+					// Aktywuj domyślny filtr "Wszystkie"
+					document.querySelector('.gallery-filter[data-filter="all"]').click()
+				}
+
+				// Dodawanie nowego elementu
+				document.getElementById('addNewItem').addEventListener('click', () => {
+					// Znajdź najwyższe ID
+					const maxId = galleryData.length > 0 ? Math.max(...galleryData.map(item => item.id)) : 0
+
+					// Stwórz nowy element
+					const newItem = {
+						id: maxId + 1,
+						title: 'Nowy element',
+						description: 'Opis nowego elementu',
+						category: 'women',
+						imageSrc: 'images/4.jpg',
+						altText: 'Opis alternatywny dla SEO',
+					}
+
+					// Dodaj do danych
+					galleryData.push(newItem)
+
+					// Odśwież widok
+					renderGallery(galleryData)
+
+					// Otwórz modal edycji dla nowego elementu
+					openEditModal(newItem)
+				})
+
+				// Obsługa modalu edycji
+				function openEditModal(item) {
+					const modal = document.getElementById('editModal')
+					const form = document.getElementById('editForm')
+
+					// Wypełnij formularz
+					document.getElementById('item-id').value = item.id
+					document.getElementById('item-title').value = item.title
+					document.getElementById('item-description').value = item.description
+					document.getElementById('item-category').value = item.category
+					document.getElementById('item-image').value = item.imageSrc
+					document.getElementById('item-alt-text').value = item.altText || ''
+
+					// Pokaż modal
+					modal.classList.remove('hidden')
+				}
+
+				// Zamknij modal
+				document.getElementById('closeModal').addEventListener('click', closeModal)
+				document.getElementById('cancelEdit').addEventListener('click', closeModal)
+
+				function closeModal() {
+					document.getElementById('editModal').classList.add('hidden')
+				}
+
+				// Zapisz zmiany z formularza
+				document.getElementById('editForm').addEventListener('submit', function (e) {
+					e.preventDefault()
+
+					const itemId = parseInt(document.getElementById('item-id').value)
+					const title = document.getElementById('item-title').value.trim()
+					const description = document.getElementById('item-description').value.trim()
+					const category = document.getElementById('item-category').value
+					const imageSrc = document.getElementById('item-image').value.trim()
+					const altText = document.getElementById('item-alt-text').value.trim()
+
+					// Znajdź element w tablicy
+					const itemIndex = galleryData.findIndex(item => item.id === itemId)
+
+					if (itemIndex !== -1) {
+						// Aktualizuj element
+						galleryData[itemIndex] = {
+							...galleryData[itemIndex],
+							title,
+							description,
+							category,
+							imageSrc,
+							altText,
+						}
+					}
+
+					// Odśwież widok
+					renderGallery(galleryData)
+
+					// Zamknij modal
+					closeModal()
+				})
+
+				// Usunięcie elementu
+				document.getElementById('deleteItem').addEventListener('click', function () {
+					if (!confirm('Czy na pewno chcesz usunąć ten element z galerii?')) {
+						return
+					}
+
+					const itemId = parseInt(document.getElementById('item-id').value)
+
+					// Usuń element z tablicy
+					galleryData = galleryData.filter(item => item.id !== itemId)
+
+					// Odśwież widok
+					renderGallery(galleryData)
+
+					// Zamknij modal
+					closeModal()
+				})
+
+				// Zapisz wszystkie zmiany
+				document.getElementById('saveChanges').addEventListener('click', function () {
+					try {
+						// Zapisz dane do localStorage
+						localStorage.setItem('galleryData', JSON.stringify(galleryData))
+
+						// Zapisz datę aktualizacji
+						const now = Date.now()
+						localStorage.setItem('galleryLastUpdate', now)
+						document.getElementById('last-update').textContent = new Date(now).toLocaleString()
+
+						// Użyj funkcji z baza.js, jeśli dostępna
+						if (typeof saveGalleryData === 'function') {
+							saveGalleryData(galleryData)
+						}
+
+						alert('Zmiany zostały pomyślnie zapisane!')
+					} catch (error) {
+						console.error('Błąd podczas zapisywania zmian:', error)
+						alert('Wystąpił błąd podczas zapisywania zmian. Sprawdź konsolę.')
+					}
+				})
+
+				// Cofnij zmiany
+				document.getElementById('revertChanges').addEventListener('click', function () {
+					if (!confirm('Czy na pewno chcesz cofnąć wszystkie niezapisane zmiany?')) {
+						return
+					}
+
+					// Zresetuj dane
+					init()
+				})
+
+				// Obsługa przesyłania zdjęć
+				const uploadImageBtn = document.getElementById('upload-image-btn')
+				const uploadModal = document.getElementById('uploadModal')
+				const closeUploadModal = document.getElementById('closeUploadModal')
+				const cancelUpload = document.getElementById('cancelUpload')
+				const dropZone = document.getElementById('dropZone')
+				const fileInput = document.getElementById('fileInput')
+				const browseButton = document.getElementById('browseButton')
+				const previewContainer = document.getElementById('previewContainer')
+				const imagePreview = document.getElementById('imagePreview')
+				const fileInfo = document.getElementById('fileInfo')
+				const removePreview = document.getElementById('removePreview')
+				const submitUpload = document.getElementById('submitUpload')
+				const uploadProgress = document.getElementById('uploadProgress')
+				const progressBar = document.getElementById('progressBar')
+				const progressPercentage = document.getElementById('progressPercentage')
+
+				let selectedFile = null
+
+				// Otwórz modal przesyłania zdjęć
+				uploadImageBtn.addEventListener('click', function () {
+					uploadModal.classList.remove('hidden')
+					resetUploadForm()
+				})
+
+				// Zamknij modal przesyłania zdjęć
+				function closeUploadModalFunc() {
+					uploadModal.classList.add('hidden')
+					resetUploadForm()
+				}
+
+				closeUploadModal.addEventListener('click', closeUploadModalFunc)
+				cancelUpload.addEventListener('click', closeUploadModalFunc)
+
+				// Obsługa przycisku wyboru pliku
+				browseButton.addEventListener('click', function () {
+					fileInput.click()
+				})
+
+				// Obsługa wyboru pliku
+				fileInput
+					.addEventListener('change', function (e) {
+						handleFileSelect(e.target.files[0])
+					})
+
+					[
+						// Obsługa drag & drop
+						('dragenter', 'dragover', 'dragleave', 'drop')
+					].forEach(eventName => {
+						dropZone.addEventListener(eventName, preventDefaults, false)
+					})
+
+				function preventDefaults(e) {
+					e.preventDefault()
+					e.stopPropagation()
+				}
+
+				;['dragenter', 'dragover'].forEach(eventName => {
+					dropZone.addEventListener(eventName, highlight, false)
+				})
+				;['dragleave', 'drop'].forEach(eventName => {
+					dropZone.addEventListener(eventName, unhighlight, false)
+				})
+
+				function highlight() {
+					dropZone.classList.add('bg-gray-100', 'border-brown')
+				}
+
+				function unhighlight() {
+					dropZone.classList.remove('bg-gray-100', 'border-brown')
+				}
+
+				dropZone.addEventListener('drop', function (e) {
+					const dt = e.dataTransfer
+					const file = dt.files[0]
+					handleFileSelect(file)
+				})
+
+				// Obsługa wybranego pliku
+				function handleFileSelect(file) {
+					if (!file) return
+
+					// Sprawdź czy to obraz
+					if (!file.type.match('image.*')) {
+						alert('Proszę wybrać plik obrazu (JPG, PNG, GIF, itp.)')
+						return
+					}
+
+					// Sprawdź rozmiar pliku
+					if (file.size > 5 * 1024 * 1024) {
+						// 5MB
+						alert('Plik jest zbyt duży. Maksymalny rozmiar to 5MB.')
+						return
+					}
+
+					selectedFile = file
+
+					// Zwolnij poprzedni obiekt URL, jeśli istnieje
+					if (imagePreview.src && imagePreview.src.startsWith('blob:')) {
+						URL.revokeObjectURL(imagePreview.src)
+					}
+
+					// Użyj URL.createObjectURL zamiast FileReader dla lepszej wydajności
+					imagePreview.src = URL.createObjectURL(file)
+					previewContainer.classList.remove('hidden')
+					dropZone.classList.add('hidden')
+					imagePreview.classList.remove('hidden')
+
+					// Wyświetl informacje o pliku
+					const size = formatFileSize(file.size)
+					fileInfo.textContent = `${file.name} (${size})`
+
+					// Włącz przycisk przesyłania
+					submitUpload.disabled = false
+				}
+
+				// Formatowanie rozmiaru pliku
+				function formatFileSize(bytes) {
+					if (bytes === 0) return '0 B'
+					const k = 1024
+					const sizes = ['B', 'KB', 'MB', 'GB']
+					const i = Math.floor(Math.log(bytes) / Math.log(k))
+					return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i]
+				}
+
+				// Usuń podgląd
+				removePreview.addEventListener('click', function () {
+					resetUploadForm()
+				})
+
+				// Funkcja do resetowania formularza przesyłania
+				function resetUploadForm() {
+					uploadProgress.classList.add('hidden')
+					progressBar.style.width = '0%'
+					progressPercentage.textContent = '0%'
+					submitUpload.disabled = true
+
+					// Zwolnij URL obrazu
+					if (imagePreview.src && imagePreview.src.startsWith('blob:')) {
+						URL.revokeObjectURL(imagePreview.src)
+					}
+
+					// Resetuj podgląd
+					imagePreview.src = ''
+					fileInfo.textContent = ''
+					previewContainer.classList.add('hidden')
+					dropZone.classList.remove('hidden')
+					selectedFile = null
+				}
+
+				// Obsługa przesyłania pliku
+				document.getElementById('uploadForm').addEventListener('submit', function (e) {
+					e.preventDefault()
+
+					if (!selectedFile) {
+						alert('Proszę wybrać plik do przesłania.')
+						return
+					}
+
+					// Pokaż pasek postępu
+					uploadProgress.classList.remove('hidden')
+					submitUpload.disabled = true
+
+					// Utwórz obiekt FormData i dodaj plik
+					const formData = new FormData()
+					formData.append('image', selectedFile)
+
+					// Utwórz obiekt XMLHttpRequest
+					const xhr = new XMLHttpRequest()
+
+					// Obsługa zdarzenia postępu
+					xhr.upload.addEventListener('progress', function (e) {
+						if (e.lengthComputable) {
+							const percent = Math.round((e.loaded / e.total) * 100)
+							progressBar.style.width = percent + '%'
+							progressPercentage.textContent = percent + '%'
+						}
+					})
+
+					// Obsługa zdarzenia zakończenia
+					xhr.addEventListener('load', function () {
+						if (xhr.status >= 200 && xhr.status < 300) {
+							try {
+								const response = JSON.parse(xhr.responseText)
+
+								if (response.success) {
+									// Aktualizuj pole ścieżki do zdjęcia
+									document.getElementById('item-image').value = response.file_path
+
+									// Zamknij modal
+									closeUploadModalFunc()
+
+									// Pokaż informację o sukcesie
+									alert('Plik przesłany pomyślnie!')
+									const imgPath = JSON.parse(xhr.responseText).filepath
+									updateImagePath(imgPath)
+
+									// Reset formularza po 2 sekundach
+									setTimeout(resetUploadForm, 2000)
+								} else {
+									alert('Błąd: ' + response.message)
+								}
+							} catch (error) {
+								console.error('Błąd parsowania odpowiedzi JSON:', error)
+								alert('Wystąpił błąd podczas przetwarzania odpowiedzi serwera.')
+							}
+						} else {
+							alert('Wystąpił błąd podczas przesyłania pliku. Kod statusu: ' + xhr.status)
+						}
+
+						// Resetuj formularz
+						resetUploadForm()
+					})
+
+					// Obsługa błędu
+					xhr.addEventListener('error', function () {
+						alert('Wystąpił błąd sieciowy podczas przesyłania pliku.')
+						resetUploadForm()
+					})
+
+					// Otwórz połączenie i wyślij dane
+					xhr.open('POST', 'upload.php', true)
+					xhr.send(formData)
+				})
+
+				// Inicjalizacja
+				init()
+			})
+		</script>
+	</body>
+</html>

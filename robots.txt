@@ -1,0 +1,9 @@
+# Allow all web crawlers access to the entire site
+User-agent: *
+Disallow:
+
+# Disallow access to the admin panel
+Disallow: /admin/
+
+# Specify the location of the sitemap
+Sitemap: https://salon.migdaltarnow.pl/sitemap.xml

@@ -1,0 +1,44 @@
+{
+	"name": "Salon Fryzur Migdał",
+	"short_name": "Migdał",
+	"icons": [
+		{
+			"src": "/android-chrome-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "/android-chrome-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	],
+	"theme_color": "#8b6d5c",
+	"background_color": "#f5f1e8",
+	"display": "standalone",
+	"start_url": "/",
+	"orientation": "portrait",
+	"description": "Salon Fryzur Migdał w Tarnowie - profesjonalne usługi fryzjerskie",
+	"lang": "pl-PL",
+	"dir": "ltr",
+	"categories": ["beauty", "services", "lifestyle"],
+	"screenshots": [
+		{
+			"src": "/screenshot1.jpg",
+			"sizes": "1280x720",
+			"type": "image/jpeg"
+		}
+	],
+	"shortcuts": [
+		{
+			"name": "Umów wizytę",
+			"url": "/#kontakt",
+			"description": "Rezerwacja wizyty w salonie"
+		},
+		{
+			"name": "Galeria",
+			"url": "/#portfolio",
+			"description": "Zobacz nasze realizacje"
+		}
+	]
+}

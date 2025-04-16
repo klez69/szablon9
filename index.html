@@ -1,1633 +1,1577 @@
 <!DOCTYPE html>
 <html lang="pl" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Elegancki Salon | Twoje włosy w dobrych rękach</title>
-    <meta
-      name="description"
-      content="Odkryj naszą ofertę usług fryzjerskich w eleganckim minimalistycznym stylu. Portfolio fryzur, opinie klientów oraz dane kontaktowe w jednym miejscu."
-    />
-    <meta
-      name="keywords"
-      content="fryzjer, salon fryzjerski, strzyżenie, koloryzacja, pielęgnacja włosów, fryzury"
-    />
-    <meta name="author" content="klez69" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="bg-white text-gray-800" id="top">
-    <!-- Preloader -->
-    <div id="preloader">
-      <div class="preloader-spinner"></div>
-    </div>
-
-    <!-- Header/Navbar -->
-    <header
-      class="fixed w-full bg-white bg-opacity-95 shadow-sm z-50 transition-all"
-      id="navbar"
-    >
-      <div
-        class="container mx-auto px-4 py-3 flex justify-between items-center"
-      >
-        <div class="flex items-center lg:w-1/3">
-          <a href="#" class="text-3xl font-bold text-brown">
-            <svg width="280" height="100" viewBox="0 0 600 300" class="lg:mr-4">
-              <!-- Brusher -->
-              <g>
-                <text
-                  x="300"
-                  y="180"
-                  font-family="cursive"
-                  font-size="120"
-                  text-anchor="middle"
-                  fill="#8B6D5C"
-                  font-style="italic"
-                  font-weight="bold"
-                  letter-spacing="-1"
-                >
-                  Migdał
-                </text>
-              </g>
-            </svg>
-          </a>
-        </div>
-
-        <!-- Desktop Navigation -->
-        <nav
-          class="hidden md:flex lg:w-1/3 space-x-4 lg:space-x-8 justify-center"
-        >
-          <a
-            href="#o-nas"
-            class="text-brown hover:text-brown-800 transition-all"
-            >O nas</a
-          >
-          <a
-            href="#uslugi"
-            class="text-brown hover:text-brown-800 transition-all"
-            >Usługi</a
-          >
-          <a
-            href="#portfolio"
-            class="text-brown hover:text-brown-800 transition-all"
-            >Galeria</a
-          >
-          <a
-            href="#opinie"
-            class="text-brown hover:text-brown-800 transition-all"
-            >Opinie</a
-          >
-          <a
-            href="#kontakt"
-            class="text-brown hover:text-brown-800 transition-all"
-            >Kontakt</a
-          >
-        </nav>
-
-        <!-- CTA Button -->
-        <div class="hidden md:flex lg:w-1/3 justify-end">
-          <a
-            href="#kontakt"
-            class="px-6 py-2 rounded-md text-white font-medium bg-brown"
-            >Umów wizytę</a
-          >
-        </div>
-
-        <!-- Mobile menu button -->
-        <button
-          id="mobile-menu-button"
-          class="md:hidden text-brown focus:outline-none"
-        >
-          <i class="fas fa-bars text-2xl"></i>
-        </button>
-      </div>
-
-      <!-- Mobile Navigation (Hidden by default) -->
-      <div id="mobile-menu" class="md:hidden hidden bg-white pb-4 shadow-md">
-        <nav class="container mx-auto px-4 flex flex-col space-y-3">
-          <a href="#o-nas" class="py-2 text-brown border-b border-gray-100"
-            >O nas</a
-          >
-          <a href="#uslugi" class="py-2 text-brown border-b border-gray-100"
-            >Usługi</a
-          >
-          <a href="#portfolio" class="py-2 text-brown border-b border-gray-100"
-            >Galeria</a
-          >
-          <a href="#opinie" class="py-2 text-brown border-b border-gray-100"
-            >Opinie</a
-          >
-          <a href="#kontakt" class="py-2 text-brown">Kontakt</a>
-          <a
-            href="#kontakt"
-            class="px-6 py-2 rounded-md text-white font-medium text-center bg-brown"
-            >Umów wizytę</a
-          >
-        </nav>
-      </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section
-      class="h-screen flex items-center justify-center bg-cover bg-center hero-section"
-    >
-      <!-- Overlay dla lepszej czytelności tekstu -->
-      <div class="hero-overlay"></div>
-
-      <div
-        class="container mx-auto px-4 flex flex-col items-center text-center relative z-10"
-        data-aos="fade-up"
-      >
-        <h1
-          class="text-5xl md:text-7xl font-light mb-6 leading-tight text-white"
-        >
-          Sztuka <span class="font-semibold">fryzjerska</span><br />
-          w nowoczesnym wydaniu
-        </h1>
-        <p class="text-xl md:text-2xl max-w-3xl mb-10 text-white">
-          Tworzymy wyjątkowe fryzury łączące styl z indywidualnością. Odkryj
-          nowe możliwości w pielęgnacji i stylizacji Twoich włosów.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a
-            href="#portfolio"
-            class="px-8 py-3 rounded-md text-white font-medium hover-lift transition-all bg-brown"
-          >
-            Zobacz galerię
-          </a>
-          <a
-            href="#kontakt"
-            class="px-8 py-3 rounded-md font-medium border-2 hover-lift transition-all text-white border-white"
-          >
-            Umów wizytę
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- O nas Section -->
-    <section id="o-nas" class="custom-section bg-white">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row items-center gap-12">
-          <div class="md:w-1/2" data-aos="fade-right">
-            <h2 class="text-4xl md:text-5xl font-light mb-6 text-brown">
-              O naszym <span class="font-semibold">salonie</span>
-            </h2>
-            <p class="text-lg mb-6 text-dark">
-              Salon fryzjerski z tradycją sięgającą 1911 roku. Działamy
-              nieprzerwanie w tym samym miejscu od ponad wieku, pielęgnując
-              bogate tradycje rzemiosła fryzjerskiego. Naszą siłą jest stały,
-              wysoce wykwalifikowany i godny zaufania zespół pracowników.
-            </p>
-            <p class="text-lg mb-8 text-dark">
-              Z dumą możemy powiedzieć, że zaufało nam już wielu zadowolonych
-              klientów — zapraszamy serdecznie, by dołączyć do ich grona.
-              Gwarantujemy wysoką jakość usług i profesjonalną obsługę w
-              atmosferze, która łączy klasykę z doświadczeniem.
-            </p>
-            <div class="flex gap-8 mb-6" id="stats-section">
-              <div class="text-center counter-section">
-                <span
-                  class="block text-3xl font-semibold mb-2 text-brown counter-value"
-                  data-target="114"
-                  data-suffix="+"
-                  >0+</span
-                >
-                <span class="text-dark">Lat doświadczenia</span>
-              </div>
-              <div class="text-center counter-section">
-                <span
-                  class="block text-3xl font-semibold mb-2 text-brown counter-value"
-                  data-target="1345"
-                  data-suffix="+"
-                  >0+</span
-                >
-                <span class="text-dark">Zadowolonych klientów</span>
-              </div>
-              <div class="text-center counter-section">
-                <span
-                  class="block text-3xl font-semibold mb-2 text-brown counter-value"
-                  data-target="98"
-                  data-suffix="%"
-                  >0%</span
-                >
-                <span class="text-dark">Powracających klientów</span>
-              </div>
-            </div>
-          </div>
-          <div class="md:w-1/2" data-aos="fade-left">
-            <div class="overflow-hidden rounded-lg shadow-lg">
-              <img
-                src="images/33.jpg"
-                alt="Wnętrze naszego salonu"
-                class="w-full transition-all hover-scale"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Usługi Section -->
-    <section id="uslugi" class="custom-section bg-cream">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-16" data-aos="fade-up">
-          <h2 class="text-4xl md:text-5xl font-light mb-6 text-brown">
-            Nasze <span class="font-semibold">usługi</span>
-          </h2>
-          <p class="text-lg max-w-3xl mx-auto text-dark">
-            Oferujemy kompleksowe usługi fryzjerskie dla kobiet i mężczyzn, z
-            wykorzystaniem wysokiej jakości produktów i najnowszych technik.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Usługa 1 -->
-          <div
-            class="bg-white p-8 rounded-lg shadow-md hover-lift transition-all service-card"
-            data-aos="custom-fade-up"
-            data-aos-delay="100"
-          >
-            <div class="text-4xl mb-6 text-brown">
-              <i class="fas fa-cut"></i>
-            </div>
-            <h3 class="text-2xl font-semibold mb-4 text-brown">
-              Strzyżenie i stylizacja
-            </h3>
-            <p class="mb-6 text-dark">
-              Precyzyjne strzyżenie dopasowane do kształtu twarzy i typu włosów.
-              Profesjonalna stylizacja na każdą okazję, od codziennej do
-              weselnej.
-            </p>
-            <a href="#kontakt" class="inline-block font-medium text-brown">
-              Sprawdź cennik <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-          </div>
-
-          <!-- Usługa 2 -->
-          <div
-            class="bg-white p-8 rounded-lg shadow-md hover-lift transition-all service-card"
-            data-aos="custom-fade-up"
-            data-aos-delay="200"
-          >
-            <div class="text-4xl mb-6 text-brown">
-              <i class="fas fa-paint-brush"></i>
-            </div>
-            <h3 class="text-2xl font-semibold mb-4 text-brown">Koloryzacja</h3>
-            <p class="mb-6 text-dark">
-              Pełna gama usług koloryzacji: jednolity kolor, pasemka, baleyage,
-              ombre, sombre oraz najnowsze trendy w koloryzacji.
-            </p>
-            <a href="#kontakt" class="inline-block font-medium text-brown">
-              Sprawdź cennik <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-          </div>
-
-          <!-- Usługa 3 -->
-          <div
-            class="bg-white p-8 rounded-lg shadow-md hover-lift transition-all service-card"
-            data-aos="custom-fade-up"
-            data-aos-delay="300"
-          >
-            <div class="text-4xl mb-6 text-brown">
-              <i class="fas fa-spa"></i>
-            </div>
-            <h3 class="text-2xl font-semibold mb-4 text-brown">
-              Zabiegi pielęgnacyjne
-            </h3>
-            <p class="mb-6 text-dark">
-              Regeneracja, nawilżanie, odżywianie włosów. Zabiegi keratynowe,
-              botoks do włosów oraz specjalistyczne kuracje do różnych typów
-              włosów.
-            </p>
-            <a href="#kontakt" class="inline-block font-medium text-brown">
-              Sprawdź cennik <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-          </div>
-
-          <!-- Usługa 4 -->
-          <div
-            class="bg-white p-8 rounded-lg shadow-md hover-lift transition-all service-card"
-            data-aos="custom-fade-up"
-            data-aos-delay="400"
-          >
-            <div class="text-4xl mb-6 text-brown">
-              <i class="fas fa-magic"></i>
-            </div>
-            <h3 class="text-2xl font-semibold mb-4 text-brown">
-              Przedłużanie i zagęszczanie
-            </h3>
-            <p class="mb-6 text-dark">
-              Profesjonalne przedłużanie i zagęszczanie włosów różnymi metodami.
-              Dobór odpowiedniej techniki do potrzeb klienta.
-            </p>
-            <a href="#kontakt" class="inline-block font-medium text-brown">
-              Sprawdź cennik <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-          </div>
-
-          <!-- Usługa 5 -->
-          <div
-            class="bg-white p-8 rounded-lg shadow-md hover-lift transition-all service-card"
-            data-aos="custom-fade-up"
-            data-aos-delay="500"
-          >
-            <div class="text-4xl mb-6 text-brown">
-              <i class="fas fa-fire"></i>
-            </div>
-            <h3 class="text-2xl font-semibold mb-4 text-brown">
-              Fryzury okolicznościowe
-            </h3>
-            <p class="mb-6 text-dark">
-              Wyjątkowe upięcia i fryzury na śluby, wesela, studniówki i inne
-              specjalne okazje. Konsultacja i próbne upięcie w ofercie.
-            </p>
-            <a href="#kontakt" class="inline-block font-medium text-brown">
-              Sprawdź cennik <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-          </div>
-
-          <!-- Usługa 6 -->
-          <div
-            class="bg-white p-8 rounded-lg shadow-md hover-lift transition-all service-card"
-            data-aos="custom-fade-up"
-            data-aos-delay="600"
-          >
-            <div class="text-4xl mb-6 text-brown">
-              <i class="fas fa-child"></i>
-            </div>
-            <h3 class="text-2xl font-semibold mb-4 text-brown">
-              Strzyżenie dziecięce
-            </h3>
-            <p class="mb-6 text-dark">
-              Przyjazne podejście do najmłodszych klientów. Cierpliwość i
-              profesjonalizm w tworzeniu fryzur dla dzieci w każdym wieku.
-            </p>
-            <a href="#kontakt" class="inline-block font-medium text-brown">
-              Sprawdź cennik <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section
-      id="portfolio"
-      class="custom-section bg-white"
-      style="padding-bottom: 0"
-    >
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-16" data-aos="fade-up">
-          <h2 class="text-4xl md:text-5xl font-light mb-6 text-brown">
-            Nasza <span class="font-semibold">galeria</span>
-          </h2>
-          <p class="text-lg max-w-3xl mx-auto text-dark">
-            Zobacz nasze najlepsze realizacje i przekonaj się, jak możemy
-            odmienić Twój wygląd dzięki nowej fryzurze.
-          </p>
-        </div>
-
-        <!-- Portfolio Filter -->
-        <div
-          class="flex flex-wrap justify-center gap-4 mb-8"
-          data-aos="fade-up"
-        >
-          <button
-            class="portfolio-filter-btn px-6 py-2 rounded-md font-medium active"
-            style="background-color: var(--brown); color: white"
-            data-filter="all"
-          >
-            Wszystkie
-          </button>
-          <button
-            class="portfolio-filter-btn px-6 py-2 rounded-md font-medium"
-            style="color: var(--brown); border: 1px solid var(--brown)"
-            data-filter="women"
-          >
-            Damskie
-          </button>
-          <button
-            class="portfolio-filter-btn px-6 py-2 rounded-md font-medium"
-            style="color: var(--brown); border: 1px solid var(--brown)"
-            data-filter="men"
-          >
-            Męskie
-          </button>
-          <button
-            class="portfolio-filter-btn px-6 py-2 rounded-md font-medium"
-            style="color: var(--brown); border: 1px solid var(--brown)"
-            data-filter="color"
-          >
-            Koloryzacja
-          </button>
-          <button
-            class="portfolio-filter-btn px-6 py-2 rounded-md font-medium"
-            style="color: var(--brown); border: 1px solid var(--brown)"
-            data-filter="special"
-          >
-            Okolicznościowe
-          </button>
-        </div>
-
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 0;
-            padding-bottom: 0;
-          "
-        >
-          <!-- Portfolio Grid Container -->
-          <div
-            class="portfolio-grid-container"
-            style="
-              min-height: auto !important;
-              margin-bottom: 0;
-              padding-bottom: 0;
-            "
-          >
-            <!-- Portfolio Grid -->
-            <div
-              id="portfolio-grid"
-              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-              style="margin-bottom: 0; padding-bottom: 0; gap: 2px"
-            >
-              <!-- Portfolio Item 1 -->
-              <div
-                class="portfolio-item women"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                <div class="relative overflow-hidden rounded-lg group">
-                  <img
-                    src="images/4.jpg"
-                    alt="Strzyżenie damskie"
-                    class="w-full h-auto transition-all duration-500 group-hover:scale-110"
-                  />
-                  <div
-                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center"
-                  >
-                    <div
-                      class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-center px-6"
-                    >
-                      <h3 class="text-xl font-semibold mb-2">
-                        Nowoczesne strzyżenie z grzywką
-                      </h3>
-                      <p class="mb-4">Strzyżenie, modelowanie</p>
-                      <a
-                        href="#"
-                        class="px-4 py-2 rounded-md text-white font-medium"
-                        style="background-color: var(--brown)"
-                      >
-                        Zobacz więcej
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Portfolio Item 2 -->
-              <div
-                class="portfolio-item color"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <div class="relative overflow-hidden rounded-lg group">
-                  <img
-                    src="images/5.jpg"
-                    alt="Koloryzacja włosów"
-                    class="w-full h-auto transition-all duration-500 group-hover:scale-110"
-                  />
-                  <div
-                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center"
-                  >
-                    <div
-                      class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-center px-6"
-                    >
-                      <h3 class="text-xl font-semibold mb-2">
-                        Baleyage w ciepłych odcieniach
-                      </h3>
-                      <p class="mb-4">Koloryzacja, pielęgnacja</p>
-                      <a
-                        href="#"
-                        class="px-4 py-2 rounded-md text-white font-medium"
-                        style="background-color: var(--brown)"
-                      >
-                        Zobacz więcej
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Portfolio Item 3 -->
-              <div
-                class="portfolio-item men"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <div class="relative overflow-hidden rounded-lg group">
-                  <img
-                    src="images/6.jpg"
-                    alt="Strzyżenie męskie"
-                    class="w-full h-auto transition-all duration-500 group-hover:scale-110"
-                  />
-                  <div
-                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center"
-                  >
-                    <div
-                      class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-center px-6"
-                    >
-                      <h3 class="text-xl font-semibold mb-2">
-                        Klasyczny undercut
-                      </h3>
-                      <p class="mb-4">Strzyżenie męskie, stylizacja</p>
-                      <a
-                        href="#"
-                        class="px-4 py-2 rounded-md text-white font-medium"
-                        style="background-color: var(--brown)"
-                      >
-                        Zobacz więcej
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Portfolio Item 4 -->
-              <div
-                class="portfolio-item special okolicznosciowe"
-                data-aos="fade-up"
-                data-aos-delay="400"
-                data-category="special"
-              >
-                <div class="relative overflow-hidden rounded-lg group">
-                  <img
-                    src="images/7.jpg"
-                    alt="Fryzura ślubna"
-                    class="w-full h-auto transition-all duration-500 group-hover:scale-110"
-                  />
-                  <div
-                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center"
-                  >
-                    <div
-                      class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-center px-6"
-                    >
-                      <h3 class="text-xl font-semibold mb-2">
-                        Eleganckie upięcie ślubne
-                      </h3>
-                      <p class="mb-4">Fryzury okolicznościowe, upięcia</p>
-                      <a
-                        href="#"
-                        class="px-4 py-2 rounded-md text-white font-medium"
-                        style="background-color: var(--brown)"
-                      >
-                        Zobacz więcej
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Portfolio Item 5 -->
-              <div
-                class="portfolio-item color"
-                data-aos="fade-up"
-                data-aos-delay="500"
-              >
-                <div class="relative overflow-hidden rounded-lg group">
-                  <img
-                    src="images/8.jpg"
-                    alt="Koloryzacja ombre"
-                    class="w-full h-auto transition-all duration-500 group-hover:scale-110"
-                  />
-                  <div
-                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center"
-                  >
-                    <div
-                      class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-center px-6"
-                    >
-                      <h3 class="text-xl font-semibold mb-2">
-                        Pastelowe ombre
-                      </h3>
-                      <p class="mb-4">Koloryzacja, trendy</p>
-                      <a
-                        href="#"
-                        class="px-4 py-2 rounded-md text-white font-medium"
-                        style="background-color: var(--brown)"
-                      >
-                        Zobacz więcej
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Portfolio Item 6 -->
-              <div
-                class="portfolio-item women"
-                data-aos="fade-up"
-                data-aos-delay="600"
-              >
-                <div class="relative overflow-hidden rounded-lg group">
-                  <img
-                    src="images/9.jpg"
-                    alt="Stylizacja włosów"
-                    class="w-full h-auto transition-all duration-500 group-hover:scale-110"
-                  />
-                  <div
-                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center"
-                  >
-                    <div
-                      class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-center px-6"
-                    >
-                      <h3 class="text-xl font-semibold mb-2">
-                        Nowoczesny bob z asymetrią
-                      </h3>
-                      <p class="mb-4">Strzyżenie, stylizacja</p>
-                      <a
-                        href="#"
-                        class="px-4 py-2 rounded-md text-white font-medium"
-                        style="background-color: var(--brown)"
-                      >
-                        Zobacz więcej
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Portfolio Item 7 - Dodatkowa fryzura męska -->
-              <div
-                class="portfolio-item men"
-                data-aos="fade-up"
-                data-aos-delay="700"
-              >
-                <div class="relative overflow-hidden rounded-lg group">
-                  <img
-                    src="images/6.jpg"
-                    alt="Fryzura męska klasyczna"
-                    class="w-full h-auto transition-all duration-500 group-hover:scale-110"
-                  />
-                  <div
-                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center"
-                  >
-                    <div
-                      class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-center px-6"
-                    >
-                      <h3 class="text-xl font-semibold mb-2">
-                        Klasyczna fryzura męska
-                      </h3>
-                      <p class="mb-4">Męskie, klasyczne cięcie</p>
-                      <a
-                        href="#"
-                        class="px-4 py-2 rounded-md text-white font-medium"
-                        style="background-color: var(--brown)"
-                      >
-                        Zobacz więcej
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Portfolio Item 8 - Dodatkowa fryzura okolicznościowa -->
-              <div
-                class="portfolio-item special okolicznosciowe"
-                data-aos="fade-up"
-                data-aos-delay="800"
-                data-category="special"
-              >
-                <div class="relative overflow-hidden rounded-lg group">
-                  <img
-                    src="images/7.jpg"
-                    alt="Fryzura okolicznościowa"
-                    class="w-full h-auto transition-all duration-500 group-hover:scale-110"
-                  />
-                  <div
-                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center"
-                  >
-                    <div
-                      class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-center px-6"
-                    >
-                      <h3 class="text-xl font-semibold mb-2">
-                        Fryzura weselna elegancka
-                      </h3>
-                      <p class="mb-4">Fryzury okolicznościowe, na wesele</p>
-                      <a
-                        href="#"
-                        class="px-4 py-2 rounded-md text-white font-medium"
-                        style="background-color: var(--brown)"
-                      >
-                        Zobacz więcej
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Portfolio Item 9 - Trzecia fryzura okolicznościowa -->
-              <div
-                class="portfolio-item special okolicznosciowe"
-                data-aos="fade-up"
-                data-aos-delay="900"
-                data-category="special"
-              >
-                <div class="relative overflow-hidden rounded-lg group">
-                  <img
-                    src="images/5.jpg"
-                    alt="Fryzura na uroczystość"
-                    class="w-full h-auto transition-all duration-500 group-hover:scale-110"
-                  />
-                  <div
-                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center"
-                  >
-                    <div
-                      class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-center px-6"
-                    >
-                      <h3 class="text-xl font-semibold mb-2">
-                        Fryzura na specjalne okazje
-                      </h3>
-                      <p class="mb-4">Uroczystości, przyjęcia</p>
-                      <a
-                        href="#"
-                        class="px-4 py-2 rounded-md text-white font-medium"
-                        style="background-color: var(--brown)"
-                      >
-                        Zobacz więcej
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Portfolio Item 10 - Nowa fryzura damska -->
-              <div
-                class="portfolio-item women"
-                data-aos="fade-up"
-                data-aos-delay="1000"
-              >
-                <div class="relative overflow-hidden rounded-lg group">
-                  <img
-                    src="images/4.jpg"
-                    alt="Fryzura damska modna"
-                    class="w-full h-auto transition-all duration-500 group-hover:scale-110"
-                  />
-                  <div
-                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center"
-                  >
-                    <div
-                      class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-center px-6"
-                    >
-                      <h3 class="text-xl font-semibold mb-2">
-                        Stylowe cięcie z refleksami
-                      </h3>
-                      <p class="mb-4">Cięcie damskie, modelowanie</p>
-                      <a
-                        href="#"
-                        class="px-4 py-2 rounded-md text-white font-medium"
-                        style="background-color: var(--brown)"
-                      >
-                        Zobacz więcej
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Portfolio Item 11 - Nowa koloryzacja -->
-              <div
-                class="portfolio-item color"
-                data-aos="fade-up"
-                data-aos-delay="1100"
-                style="margin-bottom: 0"
-              >
-                <div class="relative overflow-hidden rounded-lg group">
-                  <img
-                    src="images/8.jpg"
-                    alt="Nowoczesna koloryzacja"
-                    class="w-full h-auto transition-all duration-500 group-hover:scale-110"
-                  />
-                  <div
-                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center"
-                  >
-                    <div
-                      class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-center px-6"
-                    >
-                      <h3 class="text-xl font-semibold mb-2">
-                        Wielowymiarowa koloryzacja
-                      </h3>
-                      <p class="mb-4">Nowoczesne techniki, pielęgnacja</p>
-                      <a
-                        href="#"
-                        class="px-4 py-2 rounded-md text-white font-medium"
-                        style="background-color: var(--brown)"
-                      >
-                        Zobacz więcej
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Pagination Controls -->
-          <div
-            class="flex justify-between items-center mt-1 mb-1"
-            style="margin-top: -5px"
-          >
-            <button
-              id="prev-page"
-              class="px-4 py-1 rounded-md font-medium border border-brown text-brown hover:bg-brown hover:text-white transition-all"
-            >
-              <i class="fas fa-chevron-left mr-2"></i>Poprzednia
-            </button>
-
-            <div class="flex gap-2 pagination-numbers">
-              <!-- Numery stron będą generowane przez JavaScript -->
-            </div>
-
-            <button
-              id="next-page"
-              class="px-4 py-1 rounded-md font-medium border border-brown text-brown hover:bg-brown hover:text-white transition-all"
-            >
-              Następna<i class="fas fa-chevron-right ml-2"></i>
-            </button>
-          </div>
-
-          <!-- Show More Button (pozostawiony jako alternatywna opcja) -->
-          <div
-            style="
-              text-align: center;
-              margin-top: 0;
-              margin-bottom: 0;
-              padding-top: 0;
-            "
-            data-aos="fade-up"
-          >
-            <button
-              class="px-8 py-3 rounded-md font-medium border-2 hover-lift transition-all"
-              style="color: var(--brown); border-color: var(--brown)"
-            >
-              Zobacz więcej realizacji
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Opinie Section -->
-    <section
-      id="opinie"
-      class="custom-section bg-cream"
-      style="padding-top: 1rem"
-    >
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-10" data-aos="fade-up">
-          <h2 class="text-4xl md:text-5xl font-light mb-6 text-brown">
-            Co mówią <span class="font-semibold">klienci</span>
-          </h2>
-          <p class="text-lg max-w-3xl mx-auto text-dark">
-            Poznaj opinie naszych klientów, którzy docenili nasze podejście do
-            designu i jakość dostarczanych przez nas rozwiązań.
-          </p>
-        </div>
-
-        <!-- Testimonial Slider -->
-        <div class="testimonial-slider" data-aos="fade-up">
-          <div class="flex transition-all" id="testimonial-container">
-            <!-- Testimonial 1 -->
-            <div class="testimonial-slide w-full lg:w-1/3 px-4 flex-shrink-0">
-              <div class="bg-white p-8 rounded-lg shadow-md">
-                <div class="flex justify-between items-center mb-6">
-                  <div class="flex items-center">
-                    <div
-                      class="w-12 h-12 rounded-full overflow-hidden mr-4 bg-brown flex items-center justify-center"
-                    >
-                      <i class="fas fa-user-tie text-white text-2xl"></i>
-                    </div>
-                    <div>
-                      <h4 class="font-semibold" style="color: var(--brown)">
-                        Anna Kowalska
-                      </h4>
-                      <p class="text-sm" style="color: var(--dark)">
-                        Właścicielka restauracji
-                      </p>
-                    </div>
-                  </div>
-                  <div class="flex">
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                  </div>
-                </div>
-                <p class="text-base" style="color: var(--dark)">
-                  "Doskonała obsługa, profesjonalizm i atmosfera w salonie.
-                  Zawsze się czuję dobrze i zadowolona z wyniku każdej wizyty."
-                </p>
-              </div>
-            </div>
-
-            <!-- Testimonial 2 -->
-            <div class="testimonial-slide w-full lg:w-1/3 px-4 flex-shrink-0">
-              <div class="bg-white p-8 rounded-lg shadow-md">
-                <div class="flex justify-between items-center mb-6">
-                  <div class="flex items-center">
-                    <div
-                      class="w-12 h-12 rounded-full overflow-hidden mr-4 bg-brown flex items-center justify-center"
-                    >
-                      <i class="fas fa-user-tie text-white text-2xl"></i>
-                    </div>
-                    <div>
-                      <h4 class="font-semibold" style="color: var(--brown)">
-                        Michał Nowak
-                      </h4>
-                      <p class="text-sm" style="color: var(--dark)">
-                        Mężczyzna
-                      </p>
-                    </div>
-                  </div>
-                  <div class="flex">
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                  </div>
-                </div>
-                <p class="text-base" style="color: var(--dark)">
-                  "Fryzjerka bardzo dobrze zrozumiała moje preferencje i zrobiła
-                  mi fryzurę, która idealnie podkreślała moją osobowość."
-                </p>
-              </div>
-            </div>
-
-            <!-- Testimonial 3 -->
-            <div class="testimonial-slide w-full lg:w-1/3 px-4 flex-shrink-0">
-              <div class="bg-white p-8 rounded-lg shadow-md">
-                <div class="flex justify-between items-center mb-6">
-                  <div class="flex items-center">
-                    <div
-                      class="w-12 h-12 rounded-full overflow-hidden mr-4 bg-brown flex items-center justify-center"
-                    >
-                      <i class="fas fa-user-tie text-white text-2xl"></i>
-                    </div>
-                    <div>
-                      <h4 class="font-semibold" style="color: var(--brown)">
-                        Ewa Kowalska
-                      </h4>
-                      <p class="text-sm" style="color: var(--dark)">Kobieta</p>
-                    </div>
-                  </div>
-                  <div class="flex">
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                  </div>
-                </div>
-                <p class="text-base" style="color: var(--dark)">
-                  "Salon jest naprawdę wspaniały, a fryzjerka jest mistrzem
-                  swojej pracy. Zawsze się czuję pięknie i pewnie w swojej
-                  skórze."
-                </p>
-              </div>
-            </div>
-
-            <!-- Testimonial 4 -->
-            <div class="testimonial-slide w-full lg:w-1/3 px-4 flex-shrink-0">
-              <div class="bg-white p-8 rounded-lg shadow-md">
-                <div class="flex justify-between items-center mb-6">
-                  <div class="flex items-center">
-                    <div
-                      class="w-12 h-12 rounded-full overflow-hidden mr-4 bg-brown flex items-center justify-center"
-                    >
-                      <i class="fas fa-user-tie text-white text-2xl"></i>
-                    </div>
-                    <div>
-                      <h4 class="font-semibold" style="color: var(--brown)">
-                        Karolina Wiśniewska
-                      </h4>
-                      <p class="text-sm" style="color: var(--dark)">
-                        Nauczycielka
-                      </p>
-                    </div>
-                  </div>
-                  <div class="flex">
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                  </div>
-                </div>
-                <p class="text-base" style="color: var(--dark)">
-                  "Jestem zachwycona efektem koloryzacji. Moje włosy wyglądają
-                  naturalnie i zdrowo, a kolor utrzymuje się długo. Zawsze
-                  wychodzę z salonu zadowolona i z uśmiechem na twarzy."
-                </p>
-              </div>
-            </div>
-
-            <!-- Testimonial 5 -->
-            <div class="testimonial-slide w-full lg:w-1/3 px-4 flex-shrink-0">
-              <div class="bg-white p-8 rounded-lg shadow-md">
-                <div class="flex justify-between items-center mb-6">
-                  <div class="flex items-center">
-                    <div
-                      class="w-12 h-12 rounded-full overflow-hidden mr-4 bg-brown flex items-center justify-center"
-                    >
-                      <i class="fas fa-user-tie text-white text-2xl"></i>
-                    </div>
-                    <div>
-                      <h4 class="font-semibold" style="color: var(--brown)">
-                        Tomasz Adamski
-                      </h4>
-                      <p class="text-sm" style="color: var(--dark)">Manager</p>
-                    </div>
-                  </div>
-                  <div class="flex">
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                  </div>
-                </div>
-                <p class="text-base" style="color: var(--dark)">
-                  "Regularne strzyżenie u was to czysta przyjemność.
-                  Profesjonalne podejście, dokładność i zawsze świetne efekty.
-                  Polecam każdemu, kto ceni sobie jakość i indywidualne
-                  podejście."
-                </p>
-              </div>
-            </div>
-
-            <!-- Testimonial 6 -->
-            <div class="testimonial-slide w-full lg:w-1/3 px-4 flex-shrink-0">
-              <div class="bg-white p-8 rounded-lg shadow-md">
-                <div class="flex justify-between items-center mb-6">
-                  <div class="flex items-center">
-                    <div
-                      class="w-12 h-12 rounded-full overflow-hidden mr-4 bg-brown flex items-center justify-center"
-                    >
-                      <i class="fas fa-user-tie text-white text-2xl"></i>
-                    </div>
-                    <div>
-                      <h4 class="font-semibold" style="color: var(--brown)">
-                        Martyna Zielińska
-                      </h4>
-                      <p class="text-sm" style="color: var(--dark)">
-                        Studentka
-                      </p>
-                    </div>
-                  </div>
-                  <div class="flex">
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                    <i class="fas fa-star" style="color: var(--brown)"></i>
-                  </div>
-                </div>
-                <p class="text-base" style="color: var(--dark)">
-                  "Dzięki waszym zabiegom regeneracyjnym moje zniszczone włosy
-                  odzyskały dawny blask. Polecam każdej osobie, która potrzebuje
-                  profesjonalnej pielęgnacji i indywidualnego podejścia."
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonial Navigation Buttons -->
-          <div class="flex justify-center mt-8">
-            <button
-              id="prev-testimonial"
-              class="mx-2 w-10 h-10 rounded-full flex items-center justify-center shadow-md bg-white text-brown hover:bg-brown hover:text-white transition-all"
-            >
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <button
-              id="next-testimonial"
-              class="mx-2 w-10 h-10 rounded-full flex items-center justify-center shadow-md bg-white text-brown hover:bg-brown hover:text-white transition-all"
-            >
-              <i class="fas fa-chevron-right"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Kontakt Section -->
-    <section id="kontakt" class="custom-section bg-white">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-16" data-aos="fade-up">
-          <h2 class="text-4xl md:text-5xl font-light mb-6 text-brown">
-            Umów <span class="font-semibold">wizytę</span>
-          </h2>
-          <p class="text-lg max-w-3xl mx-auto text-dark">
-            Skontaktuj się z nami, aby umówić wizytę w salonie lub zadać
-            pytanie. Odpowiemy na wszystkie Twoje pytania i zadbamy o Twoje
-            włosy.
-          </p>
-        </div>
-
-        <div class="flex flex-col md:flex-row gap-12">
-          <!-- Formularz kontaktowy -->
-          <div class="md:w-1/2" data-aos="fade-right">
-            <form class="bg-white p-8 rounded-lg shadow-md">
-              <div class="mb-6">
-                <label
-                  for="name"
-                  class="block mb-2 font-medium"
-                  style="color: var(--brown)"
-                  >Imię i nazwisko</label
-                >
-                <input
-                  type="text"
-                  id="name"
-                  class="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2"
-                  style="border-color: var(--light-brown)"
-                  placeholder="Jan Kowalski"
-                />
-              </div>
-              <div class="mb-6">
-                <label
-                  for="email"
-                  class="block mb-2 font-medium"
-                  style="color: var(--brown)"
-                  >Email</label
-                >
-                <input
-                  type="email"
-                  id="email"
-                  class="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2"
-                  style="border-color: var(--light-brown)"
-                  placeholder="jan@example.com"
-                />
-              </div>
-              <div class="mb-6">
-                <label
-                  for="phone"
-                  class="block mb-2 font-medium"
-                  style="color: var(--brown)"
-                  >Telefon</label
-                >
-                <input
-                  type="tel"
-                  id="phone"
-                  class="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2"
-                  style="border-color: var(--light-brown)"
-                  placeholder="123-456-789"
-                />
-              </div>
-              <div class="mb-6">
-                <label
-                  for="service"
-                  class="block mb-2 font-medium"
-                  style="color: var(--brown)"
-                  >Usługa</label
-                >
-                <select
-                  id="service"
-                  class="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2"
-                  style="border-color: var(--light-brown)"
-                >
-                  <option value="" disabled selected>Wybierz usługę</option>
-                  <option value="haircut">Strzyżenie i stylizacja</option>
-                  <option value="coloring">Koloryzacja</option>
-                  <option value="treatment">Zabiegi pielęgnacyjne</option>
-                  <option value="extension">Przedłużanie i zagęszczanie</option>
-                  <option value="special">Fryzury okolicznościowe</option>
-                  <option value="kids">Strzyżenie dziecięce</option>
-                </select>
-              </div>
-              <div class="mb-6">
-                <label
-                  for="date"
-                  class="block mb-2 font-medium"
-                  style="color: var(--brown)"
-                  >Preferowana data</label
-                >
-                <input
-                  type="date"
-                  id="date"
-                  class="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2"
-                  style="border-color: var(--light-brown)"
-                />
-              </div>
-              <div class="mb-6">
-                <label
-                  for="message"
-                  class="block mb-2 font-medium"
-                  style="color: var(--brown)"
-                  >Wiadomość</label
-                >
-                <textarea
-                  id="message"
-                  rows="4"
-                  class="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2"
-                  style="border-color: var(--light-brown)"
-                  placeholder="Dodatkowe informacje..."
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                class="w-full py-3 rounded-md text-white font-medium"
-                style="background-color: var(--brown)"
-              >
-                Umów wizytę
-              </button>
-            </form>
-          </div>
-
-          <!-- Informacje kontaktowe -->
-          <div class="md:w-1/2" data-aos="fade-left">
-            <div class="bg-white p-8 rounded-lg shadow-md mb-8">
-              <h3
-                class="text-2xl font-semibold mb-6"
-                style="color: var(--brown)"
-              >
-                Informacje kontaktowe
-              </h3>
-              <div class="flex items-start mb-6">
-                <div class="text-xl mr-4" style="color: var(--brown)">
-                  <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <div>
-                  <h4 class="font-semibold mb-1" style="color: var(--brown)">
-                    Adres
-                  </h4>
-                  <p style="color: var(--dark)">
-                    ul. Krakowska 7/2<br />33-100 Tarnów
-                  </p>
-                </div>
-              </div>
-              <div class="flex items-start mb-6">
-                <div class="text-xl mr-4" style="color: var(--brown)">
-                  <i class="fas fa-phone-alt"></i>
-                </div>
-                <div>
-                  <h4 class="font-semibold mb-1" style="color: var(--brown)">
-                    Telefon
-                  </h4>
-                  <p style="color: var(--dark)">+48 884 802 309</p>
-                </div>
-              </div>
-              <div class="flex items-start mb-6">
-                <div class="text-xl mr-4" style="color: var(--brown)">
-                  <i class="fas fa-envelope"></i>
-                </div>
-                <div>
-                  <h4 class="font-semibold mb-1" style="color: var(--brown)">
-                    Email
-                  </h4>
-                  <p style="color: var(--dark)">kontakt@twojsalon.pl</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-white p-8 rounded-lg shadow-md">
-              <h3
-                class="text-2xl font-semibold mb-6"
-                style="color: var(--brown)"
-              >
-                Godziny otwarcia
-              </h3>
-              <div
-                class="flex justify-between py-2 border-b"
-                style="border-color: var(--cream)"
-              >
-                <span style="color: var(--dark)">Poniedziałek - Piątek</span>
-                <span class="font-semibold" style="color: var(--brown)"
-                  >8:00 - 18:00</span
-                >
-              </div>
-              <div
-                class="flex justify-between py-2 border-b"
-                style="border-color: var(--cream)"
-              >
-                <span style="color: var(--dark)">Sobota</span>
-                <span class="font-semibold" style="color: var(--brown)"
-                  >8:00 - 15:00</span
-                >
-              </div>
-              <div class="flex justify-between py-2">
-                <span style="color: var(--dark)">Niedziela</span>
-                <span class="font-semibold" style="color: var(--brown)"
-                  >Zamknięte</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mapa -->
-        <div
-          class="mt-16 rounded-lg overflow-hidden shadow-md"
-          data-aos="fade-up"
-        >
-          <div class="w-full h-96">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d313.33088264232725!2d20.9832203!3d50.0114007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473d859ce78ea4ef%3A0x9687dcf4abf35f6!2sSalon%20fryzjerski%20MIGDA%C5%81!5e0!3m2!1spl!2spl!4v1693496582080!5m2!1spl!2spl"
-              width="100%"
-              height="100%"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            >
-            </iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-12 footer">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="mb-8 md:mb-0">
-            <a href="#" class="text-3xl font-bold footer-text">
-              <svg width="280" height="100" viewBox="0 0 600 300">
-                <!-- Brusher -->
-                <g>
-                  <text
-                    x="300"
-                    y="180"
-                    font-family="cursive"
-                    font-size="120"
-                    text-anchor="middle"
-                    fill="#ffffff"
-                    font-style="italic"
-                    font-weight="bold"
-                    letter-spacing="-1"
-                  >
-                    Migdał
-                  </text>
-                </g>
-              </svg>
-            </a>
-            <p class="mt-2 text-white text-opacity-80">
-              Twoje włosy w dobrych rękach
-            </p>
-          </div>
-
-          <div class="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
-            <a href="#o-nas" class="footer-text hover:underline">O nas</a>
-            <a href="#uslugi" class="footer-text hover:underline">Usługi</a>
-            <a href="#portfolio" class="footer-text hover:underline">Galeria</a>
-            <a href="#opinie" class="footer-text hover:underline">Opinie</a>
-            <a href="#kontakt" class="footer-text hover:underline">Kontakt</a>
-          </div>
-
-          <div class="flex gap-4">
-            <a
-              href="https://www.facebook.com/pawel.migdal.14/?locale=pl_PL"
-              class="w-10 h-10 rounded-full flex items-center justify-center bg-white text-brown"
-            >
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a
-              href="#"
-              class="w-10 h-10 rounded-full flex items-center justify-center bg-white text-brown"
-            >
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a
-              href="#"
-              class="w-10 h-10 rounded-full flex items-center justify-center bg-white text-brown"
-            >
-              <i class="fab fa-tiktok"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="mt-12 pt-8 border-t footer-border text-center">
-          <p class="footer-text-muted">
-            © 2025 Salon Fryzur - Migdał. Wszelkie prawa zastrzeżone.
-          </p>
-          <p class="footer-text-muted mt-2">
-            <a
-              href="admin/login.html"
-              class="footer-text-muted hover:text-white transition-all"
-              >Panel administracyjny</a
-            >
-          </p>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <a
-      href="#top"
-      class="fixed bottom-6 right-6 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover-lift transition-all back-to-top"
-    >
-      <i class="fas fa-chevron-up"></i>
-    </a>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="scripts.js"></script>
-    <!-- Podstawowy skrypt filtrowania galerii bezpośrednio w HTML -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Pobierz wszystkie przyciski filtrów i elementy portfolio
-        const filterButtons = document.querySelectorAll(
-          ".portfolio-filter-btn"
-        );
-        const portfolioItems = document.querySelectorAll(".portfolio-item");
-
-        // Konfiguracja paginacji
-        const itemsPerPage = 8;
-        let currentPage = 1;
-        let currentFilter = "all";
-        const totalItems = portfolioItems.length;
-        let filteredItems = [...portfolioItems];
-
-        // Przyciski paginacji
-        const prevPageBtn = document.getElementById("prev-page");
-        const nextPageBtn = document.getElementById("next-page");
-        const paginationNumbers = document.querySelector(".pagination-numbers");
-
-        // Funkcja inicjalizująca paginację
-        function initPagination() {
-          updateFilteredItems();
-          updatePaginationControls();
-          showItemsForCurrentPage();
-        }
-
-        // Funkcja aktualizująca filteredItems na podstawie bieżącego filtra
-        function updateFilteredItems() {
-          if (currentFilter === "all") {
-            filteredItems = [...portfolioItems];
-          } else if (currentFilter === "special") {
-            filteredItems = [...portfolioItems].filter(
-              (item) =>
-                item.classList.contains("special") ||
-                item.classList.contains("okolicznosciowe") ||
-                item.getAttribute("data-category") === "special"
-            );
-          } else {
-            filteredItems = [...portfolioItems].filter((item) =>
-              item.classList.contains(currentFilter)
-            );
-          }
-        }
-
-        // Funkcja wyświetlająca elementy dla bieżącej strony
-        function showItemsForCurrentPage() {
-          const startIndex = (currentPage - 1) * itemsPerPage;
-          const endIndex = startIndex + itemsPerPage;
-
-          // Najpierw ukryj wszystkie elementy
-          portfolioItems.forEach((item) => {
-            item.style.display = "none";
-          });
-
-          // Pokaż tylko elementy dla bieżącej strony
-          filteredItems.forEach((item, index) => {
-            if (index >= startIndex && index < endIndex) {
-              item.style.display = "flex";
-            }
-          });
-        }
-
-        // Funkcja aktualizująca kontrolki paginacji
-        function updatePaginationControls() {
-          const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
-
-          // Aktualizuj przyciski prev/next
-          prevPageBtn.disabled = currentPage <= 1;
-          nextPageBtn.disabled = currentPage >= totalPages;
-
-          // Style dla przycisków wyłączonych
-          if (prevPageBtn.disabled) {
-            prevPageBtn.classList.add("opacity-50", "cursor-not-allowed");
-          } else {
-            prevPageBtn.classList.remove("opacity-50", "cursor-not-allowed");
-          }
-
-          if (nextPageBtn.disabled) {
-            nextPageBtn.classList.add("opacity-50", "cursor-not-allowed");
-          } else {
-            nextPageBtn.classList.remove("opacity-50", "cursor-not-allowed");
-          }
-
-          // Generuj numery stron
-          paginationNumbers.innerHTML = "";
-
-          for (let i = 1; i <= totalPages; i++) {
-            const pageBtn = document.createElement("button");
-            pageBtn.innerText = i;
-            pageBtn.classList.add(
-              "w-8",
-              "h-8",
-              "rounded-full",
-              "flex",
-              "items-center",
-              "justify-center",
-              "transition-all"
-            );
-
-            if (i === currentPage) {
-              pageBtn.classList.add("bg-brown", "text-white");
-            } else {
-              pageBtn.classList.add(
-                "border",
-                "border-brown",
-                "text-brown",
-                "hover:bg-brown",
-                "hover:text-white"
-              );
-            }
-
-            pageBtn.addEventListener("click", () => {
-              currentPage = i;
-              showItemsForCurrentPage();
-              updatePaginationControls();
-            });
-
-            paginationNumbers.appendChild(pageBtn);
-          }
-        }
-
-        // Event listenery dla przycisków paginacji
-        prevPageBtn.addEventListener("click", () => {
-          if (currentPage > 1) {
-            currentPage--;
-            showItemsForCurrentPage();
-            updatePaginationControls();
-          }
-        });
-
-        nextPageBtn.addEventListener("click", () => {
-          const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
-          if (currentPage < totalPages) {
-            currentPage++;
-            showItemsForCurrentPage();
-            updatePaginationControls();
-          }
-        });
-
-        // Dodaj event listener do każdego przycisku filtra
-        filterButtons.forEach(function (button) {
-          button.addEventListener("click", function () {
-            // Usuń aktywną klasę ze wszystkich przycisków
-            filterButtons.forEach(function (btn) {
-              btn.classList.remove("active");
-              btn.style.backgroundColor = "";
-              btn.style.color = "var(--brown)";
-            });
-
-            // Dodaj aktywną klasę do klikniętego przycisku
-            this.classList.add("active");
-            this.style.backgroundColor = "var(--brown)";
-            this.style.color = "white";
-
-            // Pobierz wartość filtru
-            currentFilter = this.getAttribute("data-filter");
-
-            // Zresetuj paginację i zaktualizuj widok
-            currentPage = 1;
-            initPagination();
-          });
-        });
-
-        // Inicjalizacja po załadowaniu strony
-        initPagination();
-
-        // Ustaw filtr "Wszystkie" jako aktywny na początku
-        document
-          .querySelector('.portfolio-filter-btn[data-filter="all"]')
-          .click();
-      });
-    </script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Salon Fryzur - Migdał | Profesjonalne usługi fryzjerskie w Tarnowie</title>
+		<meta
+			name="description"
+			content="Salon Fryzur Migdał w Tarnowie oferuje profesjonalne strzyżenie, koloryzację i stylizację. Zabiegi pielęgnacyjne oraz fryzury okolicznościowe. Umów wizytę już dziś!"
+		/>
+		<meta
+			name="keywords"
+			content="salon fryzjerski Tarnów, fryzjer Tarnów, strzyżenie, koloryzacja, fryzury ślubne, pielęgnacja włosów, salon Migdał, najlepszy fryzjer w Tarnowie, usługi fryzjerskie, strzyżenie damskie, strzyżenie męskie, koloryzacja włosów, baleyage, ombre, fryzury okolicznościowe"
+		/>
+		<meta name="author" content="klez69" />
+		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+		<meta name="geo.placename" content="Tarnów, Polska" />
+		<meta name="geo.region" content="PL-MA" />
+		<meta name="geo.position" content="50.0114007;20.9832203" />
+		<meta name="ICBM" content="50.0114007, 20.9832203" />
+		<meta name="language" content="pl-PL" />
+		<meta name="revisit-after" content="7 days" />
+		<meta name="copyright" content="Copyright © 2025 Salon Fryzur Migdał" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:title" content="Salon Fryzur - Migdał | Profesjonalne usługi fryzjerskie w Tarnowie" />
+		<meta
+			property="og:description"
+			content="Salon Fryzur Migdał w Tarnowie oferuje profesjonalne strzyżenie, koloryzację i stylizację. Umów wizytę!"
+		/>
+		<meta property="og:url" content="https://salon.migdaltarnow.pl/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="images/33.jpg" />
+		<meta property="og:image:alt" content="Wnętrze salonu fryzjerskiego Migdał w Tarnowie" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:locale" content="pl_PL" />
+		<meta property="og:site_name" content="Salon Fryzur Migdał" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Salon Fryzur - Migdał | Profesjonalne usługi fryzjerskie w Tarnowie" />
+		<meta name="twitter:description" content="Salon Fryzur Migdał w Tarnowie - profesjonalne usługi fryzjerskie" />
+		<meta name="twitter:image" content="images/33.jpg" />
+		<meta name="twitter:image:alt" content="Wnętrze salonu fryzjerskiego Migdał w Tarnowie" />
+
+		<link rel="canonical" href="https://salon.migdaltarnow.pl/" />
+		<link rel="alternate" hreflang="pl-PL" href="https://salon.migdaltarnow.pl/" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;600&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+
+		<!-- Ikony / Favicons -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<meta name="msapplication-TileColor" content="#8b6d5c" />
+		<meta name="theme-color" content="#8b6d5c" />
+
+		<!-- Schema.org markup dla salonu fryzjerskiego -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "HairSalon",
+				"name": "Salon Fryzur Migdał",
+				"image": "images/33.jpg",
+				"@id": "https://salon.migdaltarnow.pl",
+				"url": "https://salon.migdaltarnow.pl",
+				"telephone": "+48 884 802 309",
+				"priceRange": "$$",
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "ul. Krakowska 7/2",
+					"addressLocality": "Tarnów",
+					"postalCode": "33-100",
+					"addressCountry": "PL"
+				},
+				"geo": {
+					"@type": "GeoCoordinates",
+					"latitude": 50.0114007,
+					"longitude": 20.9832203
+				},
+				"openingHoursSpecification": [
+					{
+						"@type": "OpeningHoursSpecification",
+						"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+						"opens": "08:00",
+						"closes": "18:00"
+					},
+					{
+						"@type": "OpeningHoursSpecification",
+						"dayOfWeek": "Saturday",
+						"opens": "08:00",
+						"closes": "15:00"
+					}
+				],
+				"sameAs": ["https://www.facebook.com/pawel.migdal.14/"],
+				"description": "Salon fryzjerski z tradycją sięgającą 1911 roku. Oferujemy kompleksowe usługi fryzjerskie: strzyżenie, koloryzację, zabiegi pielęgnacyjne i fryzury okolicznościowe.",
+				"hasOfferCatalog": {
+					"@type": "OfferCatalog",
+					"name": "Usługi fryzjerskie",
+					"itemListElement": [
+						{
+							"@type": "OfferCatalog",
+							"name": "Strzyżenie i stylizacja",
+							"itemListElement": [
+								{
+									"@type": "Offer",
+									"itemOffered": {
+										"@type": "Service",
+										"name": "Strzyżenie damskie"
+									}
+								},
+								{
+									"@type": "Offer",
+									"itemOffered": {
+										"@type": "Service",
+										"name": "Strzyżenie męskie"
+									}
+								},
+								{
+									"@type": "Offer",
+									"itemOffered": {
+										"@type": "Service",
+										"name": "Strzyżenie dziecięce"
+									}
+								}
+							]
+						},
+						{
+							"@type": "OfferCatalog",
+							"name": "Koloryzacja",
+							"itemListElement": [
+								{
+									"@type": "Offer",
+									"itemOffered": {
+										"@type": "Service",
+										"name": "Baleyage"
+									}
+								},
+								{
+									"@type": "Offer",
+									"itemOffered": {
+										"@type": "Service",
+										"name": "Ombre"
+									}
+								},
+								{
+									"@type": "Offer",
+									"itemOffered": {
+										"@type": "Service",
+										"name": "Pasemka"
+									}
+								}
+							]
+						},
+						{
+							"@type": "OfferCatalog",
+							"name": "Fryzury okolicznościowe",
+							"itemListElement": [
+								{
+									"@type": "Offer",
+									"itemOffered": {
+										"@type": "Service",
+										"name": "Upięcia ślubne"
+									}
+								},
+								{
+									"@type": "Offer",
+									"itemOffered": {
+										"@type": "Service",
+										"name": "Fryzury wieczorowe"
+									}
+								}
+							]
+						}
+					]
+				},
+				"review": [
+					{
+						"@type": "Review",
+						"reviewRating": {
+							"@type": "Rating",
+							"ratingValue": "5",
+							"bestRating": "5"
+						},
+						"author": {
+							"@type": "Person",
+							"name": "Anna Kowalska"
+						},
+						"datePublished": "2023-09-15",
+						"reviewBody": "Doskonała obsługa, profesjonalizm i atmosfera w salonie. Zawsze się czuję dobrze i zadowolona z wyniku każdej wizyty."
+					},
+					{
+						"@type": "Review",
+						"reviewRating": {
+							"@type": "Rating",
+							"ratingValue": "5",
+							"bestRating": "5"
+						},
+						"author": {
+							"@type": "Person",
+							"name": "Michał Nowak"
+						},
+						"datePublished": "2023-10-20",
+						"reviewBody": "Fryzjerka bardzo dobrze zrozumiała moje preferencje i zrobiła mi fryzurę, która idealnie podkreślała moją osobowość."
+					}
+				],
+				"aggregateRating": {
+					"@type": "AggregateRating",
+					"ratingValue": "4.9",
+					"ratingCount": "145",
+					"bestRating": "5",
+					"worstRating": "1"
+				}
+			}
+		</script>
+	</head>
+	<body class="bg-white text-gray-800" id="top">
+		<!-- Preloader -->
+		<div id="preloader">
+			<div class="preloader-spinner"></div>
+		</div>
+
+		<!-- Header/Navbar -->
+		<header class="fixed w-full bg-white bg-opacity-95 shadow-sm z-50 transition-all" id="navbar">
+			<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+				<div class="flex items-center lg:w-1/3">
+					<a href="index.html" class="text-3xl font-bold text-brown" aria-label="Logo Salon Fryzur Migdał">
+						<svg width="280" height="100" viewBox="0 0 600 300" class="lg:mr-4" aria-hidden="true">
+							<!-- Brusher -->
+							<g>
+								<text
+									x="300"
+									y="180"
+									font-family="cursive"
+									font-size="120"
+									text-anchor="middle"
+									fill="#8B6D5C"
+									font-style="italic"
+									font-weight="bold"
+									letter-spacing="-1"
+								>
+									Migdał
+								</text>
+							</g>
+						</svg>
+					</a>
+				</div>
+
+				<!-- Desktop Navigation -->
+				<nav class="hidden md:flex lg:w-1/3 space-x-4 lg:space-x-8 justify-center" aria-label="Główna nawigacja">
+					<a href="#o-nas" class="text-brown hover:text-brown-800 transition-all">O nas</a>
+					<a href="#uslugi" class="text-brown hover:text-brown-800 transition-all">Usługi</a>
+					<a href="#portfolio" class="text-brown hover:text-brown-800 transition-all">Galeria</a>
+					<a href="#opinie" class="text-brown hover:text-brown-800 transition-all">Opinie</a>
+					<a href="#kontakt" class="text-brown hover:text-brown-800 transition-all">Kontakt</a>
+				</nav>
+
+				<!-- CTA Button -->
+				<div class="hidden md:flex lg:w-1/3 justify-end">
+					<a href="#kontakt" class="px-6 py-2 rounded-md text-white font-medium bg-brown">Umów wizytę</a>
+				</div>
+
+				<!-- Mobile menu button -->
+				<button
+					id="mobile-menu-button"
+					class="md:hidden text-brown focus:outline-none"
+					aria-label="Menu mobilne"
+					aria-expanded="false"
+					aria-controls="mobile-menu"
+				>
+					<i class="fas fa-bars text-2xl"></i>
+				</button>
+			</div>
+
+			<!-- Mobile Navigation (Hidden by default) -->
+			<div id="mobile-menu" class="md:hidden hidden bg-white pb-4 shadow-md">
+				<nav class="container mx-auto px-4 flex flex-col space-y-3" aria-label="Menu mobilne">
+					<a href="#o-nas" class="py-2 text-brown border-b border-gray-100">O nas</a>
+					<a href="#uslugi" class="py-2 text-brown border-b border-gray-100">Usługi</a>
+					<a href="#portfolio" class="py-2 text-brown border-b border-gray-100">Galeria</a>
+					<a href="#opinie" class="py-2 text-brown border-b border-gray-100">Opinie</a>
+					<a href="#kontakt" class="py-2 text-brown">Kontakt</a>
+					<a href="#kontakt" class="px-6 py-2 rounded-md text-white font-medium text-center bg-brown">Umów wizytę</a>
+				</nav>
+			</div>
+		</header>
+
+		<!-- Hero Section -->
+		<section class="h-screen flex items-center justify-center bg-cover bg-center hero-section">
+			<!-- Overlay dla lepszej czytelności tekstu -->
+			<div class="hero-overlay"></div>
+
+			<div class="container mx-auto px-4 flex flex-col items-center text-center relative z-10" data-aos="fade-up">
+				<h1 class="text-5xl md:text-7xl font-light mb-6 leading-tight text-white">
+					Sztuka <span class="font-semibold">fryzjerska</span><br />
+					w nowoczesnym wydaniu
+				</h1>
+				<p class="text-xl md:text-2xl max-w-3xl mb-10 text-white">
+					Tworzymy wyjątkowe fryzury łączące styl z indywidualnością. Odkryj nowe możliwości w pielęgnacji i stylizacji
+					Twoich włosów.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4">
+					<a href="#portfolio" class="px-8 py-3 rounded-md text-white font-medium hover-lift transition-all bg-brown">
+						Zobacz galerię
+					</a>
+					<a
+						href="#kontakt"
+						class="px-8 py-3 rounded-md font-medium border-2 hover-lift transition-all text-white border-white"
+					>
+						Umów wizytę
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- O nas Section -->
+		<section id="o-nas" class="custom-section bg-white">
+			<div class="container mx-auto px-4">
+				<div class="flex flex-col md:flex-row items-center gap-12">
+					<div class="md:w-1/2" data-aos="fade-right">
+						<h2 class="text-4xl md:text-5xl font-light mb-6 text-brown">
+							O naszym <span class="font-semibold">salonie</span>
+						</h2>
+						<p class="text-lg mb-6 text-dark">
+							Salon fryzjerski z tradycją sięgającą 1911 roku. Działamy nieprzerwanie w tym samym miejscu od ponad
+							wieku, pielęgnując bogate tradycje rzemiosła fryzjerskiego. Naszą siłą jest stały, wysoce wykwalifikowany
+							i godny zaufania zespół pracowników.
+						</p>
+						<p class="text-lg mb-8 text-dark">
+							Z dumą możemy powiedzieć, że zaufało nam już wielu zadowolonych klientów — zapraszamy serdecznie, by
+							dołączyć do ich grona. Gwarantujemy wysoką jakość usług i profesjonalną obsługę w atmosferze, która łączy
+							klasykę z doświadczeniem.
+						</p>
+						<div class="flex gap-8 mb-6" id="stats-section">
+							<div class="text-center counter-section">
+								<span
+									class="block text-3xl font-semibold mb-2 text-brown counter-value"
+									data-target="114"
+									data-suffix="+"
+									>0+</span
+								>
+								<span class="text-dark">Lat doświadczenia</span>
+							</div>
+							<div class="text-center counter-section">
+								<span
+									class="block text-3xl font-semibold mb-2 text-brown counter-value"
+									data-target="1345"
+									data-suffix="+"
+									>0+</span
+								>
+								<span class="text-dark">Zadowolonych klientów</span>
+							</div>
+							<div class="text-center counter-section">
+								<span
+									class="block text-3xl font-semibold mb-2 text-brown counter-value"
+									data-target="98"
+									data-suffix="%"
+									>0%</span
+								>
+								<span class="text-dark">Powracających klientów</span>
+							</div>
+						</div>
+					</div>
+					<div class="md:w-1/2" data-aos="fade-left">
+						<div class="overflow-hidden rounded-lg shadow-lg">
+							<img
+								src="images/33.jpg"
+								alt="Wnętrze salonu fryzjerskiego Migdał w Tarnowie - eleganckie i nowoczesne stanowiska fryzjerskie"
+								class="w-full transition-all hover-scale"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Usługi Section -->
+		<section id="uslugi" class="custom-section bg-cream">
+			<div class="container mx-auto px-4">
+				<div class="text-center mb-16" data-aos="fade-up">
+					<h2 class="text-4xl md:text-5xl font-light mb-6 text-brown">
+						Nasze <span class="font-semibold">usługi</span>
+					</h2>
+					<p class="text-lg max-w-3xl mx-auto text-dark">
+						Oferujemy kompleksowe usługi fryzjerskie dla kobiet i mężczyzn, z wykorzystaniem wysokiej jakości produktów
+						i najnowszych technik.
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<!-- Usługa 1 -->
+					<div
+						class="bg-white p-8 rounded-lg shadow-md hover-lift transition-all service-card"
+						data-aos="custom-fade-up"
+						data-aos-delay="100"
+					>
+						<div class="text-4xl mb-6 text-brown">
+							<i class="fas fa-cut"></i>
+						</div>
+						<h3 class="text-2xl font-semibold mb-4 text-brown">Strzyżenie i stylizacja</h3>
+						<p class="mb-6 text-dark">
+							Precyzyjne strzyżenie dopasowane do kształtu twarzy i typu włosów. Profesjonalna stylizacja na każdą
+							okazję, od codziennej do weselnej.
+						</p>
+						<a href="#kontakt" class="inline-block font-medium text-brown">
+							Sprawdź cennik <i class="fas fa-arrow-right ml-2"></i>
+						</a>
+					</div>
+
+					<!-- Usługa 2 -->
+					<div
+						class="bg-white p-8 rounded-lg shadow-md hover-lift transition-all service-card"
+						data-aos="custom-fade-up"
+						data-aos-delay="200"
+					>
+						<div class="text-4xl mb-6 text-brown">
+							<i class="fas fa-paint-brush"></i>
+						</div>
+						<h3 class="text-2xl font-semibold mb-4 text-brown">Koloryzacja</h3>
+						<p class="mb-6 text-dark">
+							Pełna gama usług koloryzacji: jednolity kolor, pasemka, baleyage, ombre, sombre oraz najnowsze trendy w
+							koloryzacji.
+						</p>
+						<a href="#kontakt" class="inline-block font-medium text-brown">
+							Sprawdź cennik <i class="fas fa-arrow-right ml-2"></i>
+						</a>
+					</div>
+
+					<!-- Usługa 3 -->
+					<div
+						class="bg-white p-8 rounded-lg shadow-md hover-lift transition-all service-card"
+						data-aos="custom-fade-up"
+						data-aos-delay="300"
+					>
+						<div class="text-4xl mb-6 text-brown">
+							<i class="fas fa-spa"></i>
+						</div>
+						<h3 class="text-2xl font-semibold mb-4 text-brown">Zabiegi pielęgnacyjne</h3>
+						<p class="mb-6 text-dark">
+							Regeneracja, nawilżanie, odżywianie włosów. Zabiegi keratynowe, botoks do włosów oraz specjalistyczne
+							kuracje do różnych typów włosów.
+						</p>
+						<a href="#kontakt" class="inline-block font-medium text-brown">
+							Sprawdź cennik <i class="fas fa-arrow-right ml-2"></i>
+						</a>
+					</div>
+
+					<!-- Usługa 4 -->
+					<div
+						class="bg-white p-8 rounded-lg shadow-md hover-lift transition-all service-card"
+						data-aos="custom-fade-up"
+						data-aos-delay="400"
+					>
+						<div class="text-4xl mb-6 text-brown">
+							<i class="fas fa-magic"></i>
+						</div>
+						<h3 class="text-2xl font-semibold mb-4 text-brown">Przedłużanie i zagęszczanie</h3>
+						<p class="mb-6 text-dark">
+							Profesjonalne przedłużanie i zagęszczanie włosów różnymi metodami. Dobór odpowiedniej techniki do potrzeb
+							klienta.
+						</p>
+						<a href="#kontakt" class="inline-block font-medium text-brown">
+							Sprawdź cennik <i class="fas fa-arrow-right ml-2"></i>
+						</a>
+					</div>
+
+					<!-- Usługa 5 -->
+					<div
+						class="bg-white p-8 rounded-lg shadow-md hover-lift transition-all service-card"
+						data-aos="custom-fade-up"
+						data-aos-delay="500"
+					>
+						<div class="text-4xl mb-6 text-brown">
+							<i class="fas fa-fire"></i>
+						</div>
+						<h3 class="text-2xl font-semibold mb-4 text-brown">Fryzury okolicznościowe</h3>
+						<p class="mb-6 text-dark">
+							Wyjątkowe upięcia i fryzury na śluby, wesela, studniówki i inne specjalne okazje. Konsultacja i próbne
+							upięcie w ofercie.
+						</p>
+						<a href="#kontakt" class="inline-block font-medium text-brown">
+							Sprawdź cennik <i class="fas fa-arrow-right ml-2"></i>
+						</a>
+					</div>
+
+					<!-- Usługa 6 -->
+					<div
+						class="bg-white p-8 rounded-lg shadow-md hover-lift transition-all service-card"
+						data-aos="custom-fade-up"
+						data-aos-delay="600"
+					>
+						<div class="text-4xl mb-6 text-brown">
+							<i class="fas fa-child"></i>
+						</div>
+						<h3 class="text-2xl font-semibold mb-4 text-brown">Strzyżenie dziecięce</h3>
+						<p class="mb-6 text-dark">
+							Przyjazne podejście do najmłodszych klientów. Cierpliwość i profesjonalizm w tworzeniu fryzur dla dzieci w
+							każdym wieku.
+						</p>
+						<a href="#kontakt" class="inline-block font-medium text-brown">
+							Sprawdź cennik <i class="fas fa-arrow-right ml-2"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Portfolio Section -->
+		<section id="portfolio" class="custom-section bg-white" style="padding-bottom: 0">
+			<div class="container mx-auto px-4">
+				<div class="text-center mb-16" data-aos="fade-up">
+					<h2 class="text-4xl md:text-5xl font-light mb-6 text-brown">
+						Nasza <span class="font-semibold">galeria</span>
+					</h2>
+					<p class="text-lg max-w-3xl mx-auto text-dark">
+						Zobacz nasze najlepsze realizacje i przekonaj się, jak możemy odmienić Twój wygląd dzięki nowej fryzurze.
+					</p>
+				</div>
+
+				<!-- Portfolio Filter -->
+				<div class="flex flex-wrap justify-center gap-4 mb-8" data-aos="fade-up">
+					<button
+						class="portfolio-filter-btn px-6 py-2 rounded-md font-medium active"
+						style="background-color: var(--brown); color: white"
+						data-filter="all"
+					>
+						Wszystkie
+					</button>
+					<button
+						class="portfolio-filter-btn px-6 py-2 rounded-md font-medium"
+						style="color: var(--brown); border: 1px solid var(--brown)"
+						data-filter="women"
+					>
+						Damskie
+					</button>
+					<button
+						class="portfolio-filter-btn px-6 py-2 rounded-md font-medium"
+						style="color: var(--brown); border: 1px solid var(--brown)"
+						data-filter="men"
+					>
+						Męskie
+					</button>
+					<button
+						class="portfolio-filter-btn px-6 py-2 rounded-md font-medium"
+						style="color: var(--brown); border: 1px solid var(--brown)"
+						data-filter="color"
+					>
+						Koloryzacja
+					</button>
+					<button
+						class="portfolio-filter-btn px-6 py-2 rounded-md font-medium"
+						style="color: var(--brown); border: 1px solid var(--brown)"
+						data-filter="special"
+					>
+						Okolicznościowe
+					</button>
+				</div>
+
+				<div style="display: flex; flex-direction: column; margin-bottom: 0; padding-bottom: 0">
+					<!-- Portfolio Grid Container -->
+					<div class="portfolio-grid-container" style="min-height: auto !important">
+						<!-- Portfolio Grid -->
+						<div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" style="gap: 2px">
+							<!-- Portfolio Item 1 -->
+							<div class="portfolio-item women" data-aos="fade-up" data-aos-delay="100">
+								<div class="relative overflow-hidden rounded-lg group">
+									<img
+										src="images/4.jpg"
+										alt="Stylowe strzyżenie damskie z grzywką - fryzura wykonana w salonie Migdał w Tarnowie"
+										class="w-full h-auto transition-all duration-500 group-hover:scale-110"
+										loading="lazy"
+									/>
+									<div
+										class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center"
+									>
+										<div
+											class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-center px-6"
+										>
+											<h3 class="text-xl font-semibold mb-2">Nowoczesne strzyżenie z grzywką</h3>
+											<p class="mb-4">Strzyżenie, modelowanie</p>
+											<a
+												href="#"
+												class="px-4 py-2 rounded-md text-white font-medium"
+												style="background-color: var(--brown)"
+											>
+												Zobacz więcej
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Portfolio Item 2 -->
+							<div class="portfolio-item color" data-aos="fade-up" data-aos-delay="200">
+								<div class="relative overflow-hidden rounded-lg group">
+									<img
+										src="images/5.jpg"
+										alt="Profesjonalna koloryzacja włosów w ciepłych odcieniach - usługa wykonana w salonie Migdał w Tarnowie"
+										class="w-full h-auto transition-all duration-500 group-hover:scale-110"
+										loading="lazy"
+									/>
+									<div
+										class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center"
+									>
+										<div
+											class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-center px-6"
+										>
+											<h3 class="text-xl font-semibold mb-2">Baleyage w ciepłych odcieniach</h3>
+											<p class="mb-4">Koloryzacja, pielęgnacja</p>
+											<a
+												href="#"
+												class="px-4 py-2 rounded-md text-white font-medium"
+												style="background-color: var(--brown)"
+											>
+												Zobacz więcej
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Portfolio Item 3 -->
+							<div class="portfolio-item men" data-aos="fade-up" data-aos-delay="300">
+								<div class="relative overflow-hidden rounded-lg group">
+									<img
+										src="images/6.jpg"
+										alt="Klasyczny undercut męski - precyzyjne strzyżenie męskie wykonane w salonie Migdał w Tarnowie"
+										class="w-full h-auto transition-all duration-500 group-hover:scale-110"
+										loading="lazy"
+									/>
+									<div
+										class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center"
+									>
+										<div
+											class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-center px-6"
+										>
+											<h3 class="text-xl font-semibold mb-2">Klasyczny undercut</h3>
+											<p class="mb-4">Strzyżenie męskie, stylizacja</p>
+											<a
+												href="#"
+												class="px-4 py-2 rounded-md text-white font-medium"
+												style="background-color: var(--brown)"
+											>
+												Zobacz więcej
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Portfolio Item 4 -->
+							<div
+								class="portfolio-item special okolicznosciowe"
+								data-aos="fade-up"
+								data-aos-delay="400"
+								data-category="special"
+							>
+								<div class="relative overflow-hidden rounded-lg group">
+									<img
+										src="images/7.jpg"
+										alt="Eleganckie upięcie ślubne - fryzura okolicznościowa wykonana w salonie Migdał w Tarnowie"
+										class="w-full h-auto transition-all duration-500 group-hover:scale-110"
+										loading="lazy"
+									/>
+									<div
+										class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center"
+									>
+										<div
+											class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-center px-6"
+										>
+											<h3 class="text-xl font-semibold mb-2">Eleganckie upięcie ślubne</h3>
+											<p class="mb-4">Fryzury okolicznościowe, upięcia</p>
+											<a
+												href="#"
+												class="px-4 py-2 rounded-md text-white font-medium"
+												style="background-color: var(--brown)"
+											>
+												Zobacz więcej
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Portfolio Item 5 -->
+							<div class="portfolio-item color" data-aos="fade-up" data-aos-delay="500">
+								<div class="relative overflow-hidden rounded-lg group">
+									<img
+										src="images/8.jpg"
+										alt="Pastelowe ombre - nowoczesna koloryzacja wykonana w salonie Migdał w Tarnowie"
+										class="w-full h-auto transition-all duration-500 group-hover:scale-110"
+										loading="lazy"
+									/>
+									<div
+										class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center"
+									>
+										<div
+											class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-center px-6"
+										>
+											<h3 class="text-xl font-semibold mb-2">Pastelowe ombre</h3>
+											<p class="mb-4">Koloryzacja, trendy</p>
+											<a
+												href="#"
+												class="px-4 py-2 rounded-md text-white font-medium"
+												style="background-color: var(--brown)"
+											>
+												Zobacz więcej
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Portfolio Item 6 -->
+							<div class="portfolio-item women" data-aos="fade-up" data-aos-delay="600">
+								<div class="relative overflow-hidden rounded-lg group">
+									<img
+										src="images/9.jpg"
+										alt="Nowoczesny bob z asymetrią - modna fryzura damska wykonana w salonie Migdał w Tarnowie"
+										class="w-full h-auto transition-all duration-500 group-hover:scale-110"
+										loading="lazy"
+									/>
+									<div
+										class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center"
+									>
+										<div
+											class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-center px-6"
+										>
+											<h3 class="text-xl font-semibold mb-2">Nowoczesny bob z asymetrią</h3>
+											<p class="mb-4">Strzyżenie, stylizacja</p>
+											<a
+												href="#"
+												class="px-4 py-2 rounded-md text-white font-medium"
+												style="background-color: var(--brown)"
+											>
+												Zobacz więcej
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Portfolio Item 7 - Dodatkowa fryzura męska -->
+							<div class="portfolio-item men" data-aos="fade-up" data-aos-delay="700">
+								<div class="relative overflow-hidden rounded-lg group">
+									<img
+										src="images/6.jpg"
+										alt="Klasyczne cięcie męskie - fryzura dla mężczyzn z salonu Migdał w Tarnowie"
+										class="w-full h-auto transition-all duration-500 group-hover:scale-110"
+										loading="lazy"
+									/>
+									<div
+										class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center"
+									>
+										<div
+											class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-center px-6"
+										>
+											<h3 class="text-xl font-semibold mb-2">Klasyczna fryzura męska</h3>
+											<p class="mb-4">Męskie, klasyczne cięcie</p>
+											<a
+												href="#"
+												class="px-4 py-2 rounded-md text-white font-medium"
+												style="background-color: var(--brown)"
+											>
+												Zobacz więcej
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Portfolio Item 8 - Dodatkowa fryzura okolicznościowa -->
+							<div
+								class="portfolio-item special okolicznosciowe"
+								data-aos="fade-up"
+								data-aos-delay="800"
+								data-category="special"
+							>
+								<div class="relative overflow-hidden rounded-lg group">
+									<img
+										src="images/7.jpg"
+										alt="Elegancka fryzura weselna - upięcie na specjalne okazje wykonane w salonie Migdał w Tarnowie"
+										class="w-full h-auto transition-all duration-500 group-hover:scale-110"
+										loading="lazy"
+									/>
+									<div
+										class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center"
+									>
+										<div
+											class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-center px-6"
+										>
+											<h3 class="text-xl font-semibold mb-2">Fryzura weselna elegancka</h3>
+											<p class="mb-4">Fryzury okolicznościowe, na wesele</p>
+											<a
+												href="#"
+												class="px-4 py-2 rounded-md text-white font-medium"
+												style="background-color: var(--brown)"
+											>
+												Zobacz więcej
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Portfolio Item 9 - Trzecia fryzura okolicznościowa -->
+							<div
+								class="portfolio-item special okolicznosciowe"
+								data-aos="fade-up"
+								data-aos-delay="900"
+								data-category="special"
+							>
+								<div class="relative overflow-hidden rounded-lg group">
+									<img
+										src="images/5.jpg"
+										alt="Fryzura na specjalne uroczystości i przyjęcia wykonana w salonie Migdał w Tarnowie"
+										class="w-full h-auto transition-all duration-500 group-hover:scale-110"
+										loading="lazy"
+									/>
+									<div
+										class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center"
+									>
+										<div
+											class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-center px-6"
+										>
+											<h3 class="text-xl font-semibold mb-2">Fryzura na specjalne okazje</h3>
+											<p class="mb-4">Uroczystości, przyjęcia</p>
+											<a
+												href="#"
+												class="px-4 py-2 rounded-md text-white font-medium"
+												style="background-color: var(--brown)"
+											>
+												Zobacz więcej
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Portfolio Item 10 - Nowa fryzura damska -->
+							<div class="portfolio-item women" data-aos="fade-up" data-aos-delay="1000">
+								<div class="relative overflow-hidden rounded-lg group">
+									<img
+										src="images/4.jpg"
+										alt="Stylowe cięcie damskie z refleksami i modelowaniem - fryzura z salonu Migdał w Tarnowie"
+										class="w-full h-auto transition-all duration-500 group-hover:scale-110"
+										loading="lazy"
+									/>
+									<div
+										class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center"
+									>
+										<div
+											class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-center px-6"
+										>
+											<h3 class="text-xl font-semibold mb-2">Stylowe cięcie z refleksami</h3>
+											<p class="mb-4">Cięcie damskie, modelowanie</p>
+											<a
+												href="#"
+												class="px-4 py-2 rounded-md text-white font-medium"
+												style="background-color: var(--brown)"
+											>
+												Zobacz więcej
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Portfolio Item 11 - Nowa koloryzacja -->
+							<div class="portfolio-item color" data-aos="fade-up" data-aos-delay="1100" style="margin-bottom: 0">
+								<div class="relative overflow-hidden rounded-lg group">
+									<img
+										src="images/8.jpg"
+										alt="Wielowymiarowa koloryzacja z nowoczesnymi technikami - usługa koloryzacji z salonu Migdał w Tarnowie"
+										class="w-full h-auto transition-all duration-500 group-hover:scale-110"
+										loading="lazy"
+									/>
+									<div
+										class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center"
+									>
+										<div
+											class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-center px-6"
+										>
+											<h3 class="text-xl font-semibold mb-2">Wielowymiarowa koloryzacja</h3>
+											<p class="mb-4">Nowoczesne techniki, pielęgnacja</p>
+											<a
+												href="#"
+												class="px-4 py-2 rounded-md text-white font-medium"
+												style="background-color: var(--brown)"
+											>
+												Zobacz więcej
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Pagination Controls -->
+					<div class="flex justify-between items-center mt-1 mb-1">
+						<button
+							id="prev-page"
+							class="px-4 py-1 rounded-md font-medium border border-brown text-brown hover:bg-brown hover:text-white transition-all"
+						>
+							<i class="fas fa-chevron-left mr-2"></i>Poprzednia
+						</button>
+
+						<div class="flex gap-2 pagination-numbers">
+							<!-- Numery stron będą generowane przez JavaScript -->
+						</div>
+
+						<button
+							id="next-page"
+							class="px-4 py-1 rounded-md font-medium border border-brown text-brown hover:bg-brown hover:text-white transition-all"
+						>
+							Następna<i class="fas fa-chevron-right ml-2"></i>
+						</button>
+					</div>
+
+					<!-- Show More Button (pozostawiony jako alternatywna opcja) -->
+					<div style="text-align: center; margin-top: 0; margin-bottom: 0; padding-top: 0" data-aos="fade-up">
+						<button
+							class="px-8 py-3 rounded-md font-medium border-2 hover-lift transition-all"
+							style="color: var(--brown); border-color: var(--brown)"
+						>
+							Zobacz więcej realizacji</button
+						><br /><br />
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Opinie Section -->
+		<section id="opinie" class="custom-section bg-cream" style="padding-top: 1rem">
+			<div class="container mx-auto px-4">
+				<div class="text-center mb-10" data-aos="fade-up">
+					<h2 class="text-4xl md:text-5xl font-light mb-6 text-brown">
+						Co mówią <span class="font-semibold">klienci</span>
+					</h2>
+					<p class="text-lg max-w-3xl mx-auto text-dark">
+						Poznaj opinie naszych klientów, którzy docenili nasze podejście do designu i jakość dostarczanych przez nas
+						rozwiązań.
+					</p>
+				</div>
+
+				<!-- Testimonial Slider -->
+				<div class="testimonial-slider" data-aos="fade-up">
+					<div class="flex transition-all" id="testimonial-container">
+						<!-- Testimonial 1 -->
+						<div class="testimonial-slide w-full lg:w-1/3 px-4 flex-shrink-0">
+							<div class="bg-white p-8 rounded-lg shadow-md">
+								<div class="flex justify-between items-center mb-6">
+									<div class="flex items-center">
+										<div class="w-12 h-12 rounded-full overflow-hidden mr-4 bg-brown flex items-center justify-center">
+											<i class="fas fa-user-tie text-white text-2xl"></i>
+										</div>
+										<div>
+											<h4 class="font-semibold" style="color: var(--brown)">Anna Kowalska</h4>
+											<p class="text-sm" style="color: var(--dark)">Właścicielka restauracji</p>
+										</div>
+									</div>
+									<div class="flex">
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+									</div>
+								</div>
+								<p class="text-base" style="color: var(--dark)">
+									"Doskonała obsługa, profesjonalizm i atmosfera w salonie. Zawsze się czuję dobrze i zadowolona z
+									wyniku każdej wizyty."
+								</p>
+							</div>
+						</div>
+
+						<!-- Testimonial 2 -->
+						<div class="testimonial-slide w-full lg:w-1/3 px-4 flex-shrink-0">
+							<div class="bg-white p-8 rounded-lg shadow-md">
+								<div class="flex justify-between items-center mb-6">
+									<div class="flex items-center">
+										<div class="w-12 h-12 rounded-full overflow-hidden mr-4 bg-brown flex items-center justify-center">
+											<i class="fas fa-user-tie text-white text-2xl"></i>
+										</div>
+										<div>
+											<h4 class="font-semibold" style="color: var(--brown)">Michał Nowak</h4>
+											<p class="text-sm" style="color: var(--dark)">Mężczyzna</p>
+										</div>
+									</div>
+									<div class="flex">
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+									</div>
+								</div>
+								<p class="text-base" style="color: var(--dark)">
+									"Fryzjerka bardzo dobrze zrozumiała moje preferencje i zrobiła mi fryzurę, która idealnie podkreślała
+									moją osobowość."
+								</p>
+							</div>
+						</div>
+
+						<!-- Testimonial 3 -->
+						<div class="testimonial-slide w-full lg:w-1/3 px-4 flex-shrink-0">
+							<div class="bg-white p-8 rounded-lg shadow-md">
+								<div class="flex justify-between items-center mb-6">
+									<div class="flex items-center">
+										<div class="w-12 h-12 rounded-full overflow-hidden mr-4 bg-brown flex items-center justify-center">
+											<i class="fas fa-user-tie text-white text-2xl"></i>
+										</div>
+										<div>
+											<h4 class="font-semibold" style="color: var(--brown)">Ewa Kowalska</h4>
+											<p class="text-sm" style="color: var(--dark)">Kobieta</p>
+										</div>
+									</div>
+									<div class="flex">
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+									</div>
+								</div>
+								<p class="text-base" style="color: var(--dark)">
+									"Salon jest naprawdę wspaniały, a fryzjerka jest mistrzem swojej pracy. Zawsze się czuję pięknie i
+									pewnie w swojej skórze."
+								</p>
+							</div>
+						</div>
+
+						<!-- Testimonial 4 -->
+						<div class="testimonial-slide w-full lg:w-1/3 px-4 flex-shrink-0">
+							<div class="bg-white p-8 rounded-lg shadow-md">
+								<div class="flex justify-between items-center mb-6">
+									<div class="flex items-center">
+										<div class="w-12 h-12 rounded-full overflow-hidden mr-4 bg-brown flex items-center justify-center">
+											<i class="fas fa-user-tie text-white text-2xl"></i>
+										</div>
+										<div>
+											<h4 class="font-semibold" style="color: var(--brown)">Karolina Wiśniewska</h4>
+											<p class="text-sm" style="color: var(--dark)">Nauczycielka</p>
+										</div>
+									</div>
+									<div class="flex">
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+									</div>
+								</div>
+								<p class="text-base" style="color: var(--dark)">
+									"Jestem zachwycona efektem koloryzacji. Moje włosy wyglądają naturalnie i zdrowo, a kolor utrzymuje
+									się długo. Zawsze wychodzę z salonu zadowolona i z uśmiechem na twarzy."
+								</p>
+							</div>
+						</div>
+
+						<!-- Testimonial 5 -->
+						<div class="testimonial-slide w-full lg:w-1/3 px-4 flex-shrink-0">
+							<div class="bg-white p-8 rounded-lg shadow-md">
+								<div class="flex justify-between items-center mb-6">
+									<div class="flex items-center">
+										<div class="w-12 h-12 rounded-full overflow-hidden mr-4 bg-brown flex items-center justify-center">
+											<i class="fas fa-user-tie text-white text-2xl"></i>
+										</div>
+										<div>
+											<h4 class="font-semibold" style="color: var(--brown)">Tomasz Adamski</h4>
+											<p class="text-sm" style="color: var(--dark)">Manager</p>
+										</div>
+									</div>
+									<div class="flex">
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+									</div>
+								</div>
+								<p class="text-base" style="color: var(--dark)">
+									"Regularne strzyżenie u was to czysta przyjemność. Profesjonalne podejście, dokładność i zawsze
+									świetne efekty. Polecam każdemu, kto ceni sobie jakość i indywidualne podejście."
+								</p>
+							</div>
+						</div>
+
+						<!-- Testimonial 6 -->
+						<div class="testimonial-slide w-full lg:w-1/3 px-4 flex-shrink-0">
+							<div class="bg-white p-8 rounded-lg shadow-md">
+								<div class="flex justify-between items-center mb-6">
+									<div class="flex items-center">
+										<div class="w-12 h-12 rounded-full overflow-hidden mr-4 bg-brown flex items-center justify-center">
+											<i class="fas fa-user-tie text-white text-2xl"></i>
+										</div>
+										<div>
+											<h4 class="font-semibold" style="color: var(--brown)">Martyna Zielińska</h4>
+											<p class="text-sm" style="color: var(--dark)">Studentka</p>
+										</div>
+									</div>
+									<div class="flex">
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+										<i class="fas fa-star" style="color: var(--brown)"></i>
+									</div>
+								</div>
+								<p class="text-base" style="color: var(--dark)">
+									"Dzięki waszym zabiegom regeneracyjnym moje zniszczone włosy odzyskały dawny blask. Polecam każdej
+									osobie, która potrzebuje profesjonalnej pielęgnacji i indywidualnego podejścia."
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Testimonial Navigation Buttons -->
+					<div class="flex justify-center mt-8">
+						<button
+							id="prev-testimonial"
+							class="mx-2 w-10 h-10 rounded-full flex items-center justify-center shadow-md bg-white text-brown hover:bg-brown hover:text-white transition-all"
+						>
+							<i class="fas fa-chevron-left"></i>
+						</button>
+						<button
+							id="next-testimonial"
+							class="mx-2 w-10 h-10 rounded-full flex items-center justify-center shadow-md bg-white text-brown hover:bg-brown hover:text-white transition-all"
+						>
+							<i class="fas fa-chevron-right"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Kontakt Section -->
+		<section id="kontakt" class="custom-section bg-white">
+			<div class="container mx-auto px-4">
+				<div class="text-center mb-16" data-aos="fade-up">
+					<h2 class="text-4xl md:text-5xl font-light mb-6 text-brown">
+						Umów <span class="font-semibold">wizytę</span>
+					</h2>
+					<p class="text-lg max-w-3xl mx-auto text-dark">
+						Skontaktuj się z nami, aby umówić wizytę w salonie lub zadać pytanie. Odpowiemy na wszystkie Twoje pytania i
+						zadbamy o Twoje włosy.
+					</p>
+				</div>
+
+				<div class="flex flex-col md:flex-row gap-12">
+					<!-- Formularz kontaktowy -->
+					<div class="md:w-1/2" data-aos="fade-right">
+						<form
+							class="bg-white p-8 rounded-lg shadow-md"
+							id="contactForm"
+							name="contactForm"
+							aria-label="Formularz kontaktowy"
+						>
+							<div class="mb-6">
+								<label for="name" class="block mb-2 font-medium" style="color: var(--brown)">Imię i nazwisko</label>
+								<input
+									type="text"
+									id="name"
+									name="name"
+									class="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2"
+									style="border-color: var(--light-brown)"
+									placeholder="Jan Kowalski"
+									required
+									aria-required="true"
+								/>
+							</div>
+							<div class="mb-6">
+								<label for="email" class="block mb-2 font-medium" style="color: var(--brown)">Email</label>
+								<input
+									type="email"
+									id="email"
+									name="email"
+									class="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2"
+									style="border-color: var(--light-brown)"
+									placeholder="jan@example.com"
+									required
+									aria-required="true"
+								/>
+							</div>
+							<div class="mb-6">
+								<label for="phone" class="block mb-2 font-medium" style="color: var(--brown)">Telefon</label>
+								<input
+									type="tel"
+									id="phone"
+									name="phone"
+									class="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2"
+									style="border-color: var(--light-brown)"
+									placeholder="123-456-789"
+									required
+									aria-required="true"
+								/>
+							</div>
+							<div class="mb-6">
+								<label for="service" class="block mb-2 font-medium" style="color: var(--brown)">Usługa</label>
+								<select
+									id="service"
+									name="service"
+									class="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2"
+									style="border-color: var(--light-brown)"
+									required
+									aria-required="true"
+								>
+									<option value="" disabled selected>Wybierz usługę</option>
+									<option value="haircut">Strzyżenie i stylizacja</option>
+									<option value="coloring">Koloryzacja</option>
+									<option value="treatment">Zabiegi pielęgnacyjne</option>
+									<option value="extension">Przedłużanie i zagęszczanie</option>
+									<option value="special">Fryzury okolicznościowe</option>
+									<option value="kids">Strzyżenie dziecięce</option>
+								</select>
+							</div>
+							<div class="mb-6">
+								<label for="date" class="block mb-2 font-medium" style="color: var(--brown)">Preferowana data</label>
+								<input
+									type="date"
+									id="date"
+									name="date"
+									class="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2"
+									style="border-color: var(--light-brown)"
+									required
+									aria-required="true"
+								/>
+							</div>
+							<div class="mb-6">
+								<label for="message" class="block mb-2 font-medium" style="color: var(--brown)">Wiadomość</label>
+								<textarea
+									id="message"
+									name="message"
+									rows="4"
+									class="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2"
+									style="border-color: var(--light-brown)"
+									placeholder="Dodatkowe informacje..."
+									aria-required="false"
+								></textarea>
+							</div>
+							<button
+								type="submit"
+								class="w-full py-3 rounded-md text-white font-medium"
+								style="background-color: var(--brown)"
+							>
+								Umów wizytę
+							</button>
+						</form>
+					</div>
+
+					<!-- Informacje kontaktowe -->
+					<div class="md:w-1/2" data-aos="fade-left">
+						<div class="bg-white p-8 rounded-lg shadow-md mb-8">
+							<h3 class="text-2xl font-semibold mb-6" style="color: var(--brown)">Informacje kontaktowe</h3>
+							<div class="flex items-start mb-6">
+								<div class="text-xl mr-4" style="color: var(--brown)">
+									<i class="fas fa-map-marker-alt"></i>
+								</div>
+								<div>
+									<h4 class="font-semibold mb-1" style="color: var(--brown)">Adres</h4>
+									<p style="color: var(--dark)">ul. Krakowska 7/2<br />33-100 Tarnów</p>
+								</div>
+							</div>
+							<div class="flex items-start mb-6">
+								<div class="text-xl mr-4" style="color: var(--brown)">
+									<i class="fas fa-phone-alt"></i>
+								</div>
+								<div>
+									<h4 class="font-semibold mb-1" style="color: var(--brown)">Telefon</h4>
+									<p style="color: var(--dark)">+48 884 802 309</p>
+								</div>
+							</div>
+							<div class="flex items-start mb-6">
+								<div class="text-xl mr-4" style="color: var(--brown)">
+									<i class="fas fa-envelope"></i>
+								</div>
+								<div>
+									<h4 class="font-semibold mb-1" style="color: var(--brown)">Email</h4>
+									<p style="color: var(--dark)">salon@migdaltarnow.pl</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="bg-white p-8 rounded-lg shadow-md">
+							<h3 class="text-2xl font-semibold mb-6" style="color: var(--brown)">Godziny otwarcia</h3>
+							<div class="flex justify-between py-2 border-b" style="border-color: var(--cream)">
+								<span style="color: var(--dark)">Poniedziałek - Piątek</span>
+								<span class="font-semibold" style="color: var(--brown)">8:00 - 18:00</span>
+							</div>
+							<div class="flex justify-between py-2 border-b" style="border-color: var(--cream)">
+								<span style="color: var(--dark)">Sobota</span>
+								<span class="font-semibold" style="color: var(--brown)">8:00 - 15:00</span>
+							</div>
+							<div class="flex justify-between py-2">
+								<span style="color: var(--dark)">Niedziela</span>
+								<span class="font-semibold" style="color: var(--brown)">Zamknięte</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Mapa -->
+				<div class="mt-16 rounded-lg overflow-hidden shadow-md" data-aos="fade-up">
+					<div class="w-full h-96">
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d313.33088264232725!2d20.9832203!3d50.0114007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473d859ce78ea4ef%3A0x9687dcf4abf35f6!2sSalon%20fryzjerski%20MIGDA%C5%81!5e0!3m2!1spl!2spl!4v1693496582080!5m2!1spl!2spl"
+							width="100%"
+							height="100%"
+							style="border: 0"
+							allowfullscreen=""
+							loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"
+							title="Lokalizacja Salonu Fryzjerskiego Migdał w Tarnowie"
+							aria-label="Mapa z lokalizacją salonu fryzjerskiego Migdał w Tarnowie"
+						>
+						</iframe>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="py-12 footer">
+			<div class="container mx-auto px-4">
+				<div class="flex flex-col md:flex-row justify-between items-center">
+					<div class="mb-8 md:mb-0">
+						<a href="#" class="text-3xl font-bold footer-text">
+							<svg width="280" height="100" viewBox="0 0 600 300">
+								<!-- Brusher -->
+								<g>
+									<text
+										x="300"
+										y="180"
+										font-family="cursive"
+										font-size="120"
+										text-anchor="middle"
+										fill="#ffffff"
+										font-style="italic"
+										font-weight="bold"
+										letter-spacing="-1"
+									>
+										Migdał
+									</text>
+								</g>
+							</svg>
+						</a>
+						<p class="mt-2 text-white text-opacity-80">Twoje włosy w dobrych rękach</p>
+					</div>
+
+					<div class="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
+						<a href="#o-nas" class="footer-text hover:underline">O nas</a>
+						<a href="#uslugi" class="footer-text hover:underline">Usługi</a>
+						<a href="#portfolio" class="footer-text hover:underline">Galeria</a>
+						<a href="#opinie" class="footer-text hover:underline">Opinie</a>
+						<a href="#kontakt" class="footer-text hover:underline">Kontakt</a>
+					</div>
+
+					<div class="flex gap-4">
+						<a
+							href="https://www.facebook.com/pawel.migdal.14/?locale=pl_PL"
+							class="w-10 h-10 rounded-full flex items-center justify-center bg-white text-brown"
+						>
+							<i class="fab fa-facebook-f"></i>
+						</a>
+						<a href="#" class="w-10 h-10 rounded-full flex items-center justify-center bg-white text-brown">
+							<i class="fab fa-instagram"></i>
+						</a>
+						<a href="#" class="w-10 h-10 rounded-full flex items-center justify-center bg-white text-brown">
+							<i class="fab fa-tiktok"></i>
+						</a>
+					</div>
+				</div>
+
+				<div class="mt-12 pt-8 border-t footer-border text-center">
+					<p class="footer-text-muted">© 2025 Salon Fryzur - Migdał. Wszelkie prawa zastrzeżone.</p>
+					<p class="footer-text-muted mt-2">
+						<a href="admin/login.html" class="footer-text-muted hover:text-white transition-all"
+							>Panel administracyjny</a
+						>
+					</p>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Back to Top Button -->
+		<a
+			href="#top"
+			class="fixed bottom-6 right-6 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover-lift transition-all back-to-top"
+		>
+			<i class="fas fa-chevron-up"></i>
+		</a>
+
+		<!-- Scripts -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+		<script src="baza.js"></script>
+		<script src="scripts.js"></script>
+		<!-- Podstawowy skrypt filtrowania galerii bezpośrednio w HTML -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				// Pobierz wszystkie przyciski filtrów i elementy portfolio
+				const filterButtons = document.querySelectorAll('.portfolio-filter-btn')
+				const portfolioItems = document.querySelectorAll('.portfolio-item')
+
+				// Konfiguracja paginacji
+				const itemsPerPage = 8
+				let currentPage = 1
+				let currentFilter = 'all'
+				const totalItems = portfolioItems.length
+				let filteredItems = [...portfolioItems]
+
+				// Przyciski paginacji
+				const prevPageBtn = document.getElementById('prev-page')
+				const nextPageBtn = document.getElementById('next-page')
+				const paginationNumbers = document.querySelector('.pagination-numbers')
+
+				// Funkcja inicjalizująca paginację
+				function initPagination() {
+					updateFilteredItems()
+					updatePaginationControls()
+					showItemsForCurrentPage()
+				}
+
+				// Funkcja aktualizująca filteredItems na podstawie bieżącego filtra
+				function updateFilteredItems() {
+					if (currentFilter === 'all') {
+						filteredItems = [...portfolioItems]
+					} else if (currentFilter === 'special') {
+						filteredItems = [...portfolioItems].filter(
+							item =>
+								item.classList.contains('special') ||
+								item.classList.contains('okolicznosciowe') ||
+								item.getAttribute('data-category') === 'special'
+						)
+					} else {
+						filteredItems = [...portfolioItems].filter(item => item.classList.contains(currentFilter))
+					}
+				}
+
+				// Funkcja wyświetlająca elementy dla bieżącej strony
+				function showItemsForCurrentPage() {
+					const startIndex = (currentPage - 1) * itemsPerPage
+					const endIndex = startIndex + itemsPerPage
+
+					// Najpierw ukryj wszystkie elementy
+					portfolioItems.forEach(item => {
+						item.style.display = 'none'
+					})
+
+					// Pokaż tylko elementy dla bieżącej strony
+					filteredItems.forEach((item, index) => {
+						if (index >= startIndex && index < endIndex) {
+							item.style.display = 'flex'
+						}
+					})
+
+					// Ważne - odświeżenie układu strony po zmianie widocznych elementów
+					setTimeout(() => {
+						window.dispatchEvent(new Event('resize'))
+					}, 100)
+				}
+
+				// Funkcja aktualizująca kontrolki paginacji
+				function updatePaginationControls() {
+					const totalPages = Math.ceil(filteredItems.length / itemsPerPage)
+
+					// Aktualizuj przyciski prev/next
+					prevPageBtn.disabled = currentPage <= 1
+					nextPageBtn.disabled = currentPage >= totalPages
+
+					// Style dla przycisków wyłączonych
+					if (prevPageBtn.disabled) {
+						prevPageBtn.classList.add('opacity-50', 'cursor-not-allowed')
+					} else {
+						prevPageBtn.classList.remove('opacity-50', 'cursor-not-allowed')
+					}
+
+					if (nextPageBtn.disabled) {
+						nextPageBtn.classList.add('opacity-50', 'cursor-not-allowed')
+					} else {
+						nextPageBtn.classList.remove('opacity-50', 'cursor-not-allowed')
+					}
+
+					// Generuj numery stron
+					paginationNumbers.innerHTML = ''
+
+					for (let i = 1; i <= totalPages; i++) {
+						const pageBtn = document.createElement('button')
+						pageBtn.innerText = i
+						pageBtn.classList.add(
+							'w-8',
+							'h-8',
+							'rounded-full',
+							'flex',
+							'items-center',
+							'justify-center',
+							'transition-all'
+						)
+
+						if (i === currentPage) {
+							pageBtn.classList.add('bg-brown', 'text-white')
+						} else {
+							pageBtn.classList.add('border', 'border-brown', 'text-brown', 'hover:bg-brown', 'hover:text-white')
+						}
+
+						pageBtn.addEventListener('click', () => {
+							currentPage = i
+							showItemsForCurrentPage()
+							updatePaginationControls()
+						})
+
+						paginationNumbers.appendChild(pageBtn)
+					}
+				}
+
+				// Event listenery dla przycisków paginacji
+				prevPageBtn.addEventListener('click', () => {
+					if (currentPage > 1) {
+						currentPage--
+						showItemsForCurrentPage()
+						updatePaginationControls()
+					}
+				})
+
+				nextPageBtn.addEventListener('click', () => {
+					const totalPages = Math.ceil(filteredItems.length / itemsPerPage)
+					if (currentPage < totalPages) {
+						currentPage++
+						showItemsForCurrentPage()
+						updatePaginationControls()
+					}
+				})
+
+				// Dodaj event listener do każdego przycisku filtra
+				filterButtons.forEach(function (button) {
+					button.addEventListener('click', function () {
+						// Usuń aktywną klasę ze wszystkich przycisków
+						filterButtons.forEach(function (btn) {
+							btn.classList.remove('active')
+							btn.style.backgroundColor = ''
+							btn.style.color = 'var(--brown)'
+						})
+
+						// Dodaj aktywną klasę do klikniętego przycisku
+						this.classList.add('active')
+						this.style.backgroundColor = 'var(--brown)'
+						this.style.color = 'white'
+
+						// Pobierz wartość filtru
+						currentFilter = this.getAttribute('data-filter')
+
+						// Zresetuj paginację i zaktualizuj widok
+						currentPage = 1
+						initPagination()
+					})
+				})
+
+				// Inicjalizacja po załadowaniu strony
+				initPagination()
+
+				// Ustaw filtr "Wszystkie" jako aktywny na początku
+				document.querySelector('.portfolio-filter-btn[data-filter="all"]').click()
+			})
+		</script>
+	</body>
 </html>
