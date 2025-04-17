@@ -1,0 +1,98 @@
+[17-Apr-2025 12:40:16 Europe/Warsaw] Error updating visitor: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:40:25 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:40:41 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:41:12 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:41:43 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:42:13 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:42:43 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:43:09 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:43:09 Europe/Warsaw] Visitor tracking error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitor_tracking' doesn't exist
+[17-Apr-2025 12:43:13 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:43:13 Europe/Warsaw] Visitor tracking error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitor_tracking' doesn't exist
+[17-Apr-2025 12:43:34 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:43:34 Europe/Warsaw] Visitor tracking error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitor_tracking' doesn't exist
+[17-Apr-2025 12:43:36 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:43:36 Europe/Warsaw] Visitor tracking error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitor_tracking' doesn't exist
+[17-Apr-2025 12:43:43 Europe/Warsaw] Error updating visitor: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:43:43 Europe/Warsaw] Visitor tracking error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitor_tracking' doesn't exist
+[17-Apr-2025 12:43:45 Europe/Warsaw] Error updating visitor: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:43:45 Europe/Warsaw] Visitor tracking error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitor_tracking' doesn't exist
+[17-Apr-2025 12:43:50 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:43:50 Europe/Warsaw] Visitor tracking error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitor_tracking' doesn't exist
+[17-Apr-2025 12:44:20 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:44:51 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:45:21 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:45:51 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:46:22 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:46:52 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:47:23 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:47:53 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:48:23 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:48:54 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:49:24 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:49:55 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:50:25 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:50:25 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:50:26 Europe/Warsaw] Visitor tracking error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitor_tracking' doesn't exist
+[17-Apr-2025 12:50:56 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:51:09 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:51:09 Europe/Warsaw] Visitor tracking error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitor_tracking' doesn't exist
+[17-Apr-2025 12:51:40 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:52:10 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:52:41 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:53:11 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:53:42 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:54:12 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:54:42 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:55:12 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:55:43 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:56:13 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:56:44 Europe/Warsaw] API Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'baza5829_salon.visitors' doesn't exist
+[17-Apr-2025 12:57:10 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 12:57:12 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 12:57:19 Europe/Warsaw] Error updating visitor: SQLSTATE[HY093]: Invalid parameter number
+[17-Apr-2025 12:57:19 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 12:57:21 Europe/Warsaw] Error updating visitor: SQLSTATE[HY093]: Invalid parameter number
+[17-Apr-2025 12:57:21 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 12:57:51 Europe/Warsaw] Error updating visitor: SQLSTATE[HY093]: Invalid parameter number
+[17-Apr-2025 12:58:03 Europe/Warsaw] Error updating visitor: SQLSTATE[HY093]: Invalid parameter number
+[17-Apr-2025 12:58:03 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 12:58:11 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 12:58:17 Europe/Warsaw] Error updating visitor: SQLSTATE[HY093]: Invalid parameter number
+[17-Apr-2025 12:58:17 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 12:58:48 Europe/Warsaw] Error updating visitor: SQLSTATE[HY093]: Invalid parameter number
+[17-Apr-2025 12:59:16 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 12:59:26 Europe/Warsaw] Error updating visitor: SQLSTATE[HY093]: Invalid parameter number
+[17-Apr-2025 12:59:26 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 12:59:44 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 12:59:56 Europe/Warsaw] Error updating visitor: SQLSTATE[HY093]: Invalid parameter number
+[17-Apr-2025 13:00:26 Europe/Warsaw] Error updating visitor: SQLSTATE[HY093]: Invalid parameter number
+[17-Apr-2025 13:00:56 Europe/Warsaw] Error updating visitor: SQLSTATE[HY093]: Invalid parameter number
+[17-Apr-2025 13:01:26 Europe/Warsaw] Error updating visitor: SQLSTATE[HY093]: Invalid parameter number
+[17-Apr-2025 13:02:49 Europe/Warsaw] Error updating visitor: SQLSTATE[HY093]: Invalid parameter number
+[17-Apr-2025 13:02:49 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 13:09:06 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 13:09:08 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 13:09:31 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 13:38:18 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 13:38:33 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 13:39:33 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 13:43:34 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 13:43:35 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 13:44:22 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 15:46:48 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 15:46:56 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 16:15:37 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 16:16:27 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 16:16:27 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 17:01:29 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 17:07:25 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 17:07:40 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 17:31:12 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 17:45:03 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 18:13:09 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 18:13:13 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 18:14:13 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 18:14:14 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 18:14:50 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
+[17-Apr-2025 18:15:21 Europe/Warsaw] Visitor tracking error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'page_url' cannot be null
