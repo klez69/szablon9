@@ -48,4 +48,4 @@ Ten projekt jest licencjonowany na zasadach licencji MIT. Szczegóły znajdziesz
 
 ## Kontakt
 
-Jeśli masz pytania lub potrzebujesz pomocy, skontaktuj się z nami pod adresem email: [klez69@gmail.com](mailto:klez69@gmail.com).
+Jeśli masz pytania lub potrzebujesz pomocy, skontaktuj się z nami pod adresem email: [salon@migdaltarnow.pl](mailto:salon@migdaltarnow.pl).

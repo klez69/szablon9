@@ -1404,7 +1404,7 @@
 
 		<!-- Scripts -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-		<script src="baza.js"></script>
+		<script src="gallery.js"></script>
 		<script src="scripts.js"></script>
 		<!-- Podstawowy skrypt filtrowania galerii bezpośrednio w HTML -->
 		<script>
@@ -1573,5 +1573,24 @@
 				document.querySelector('.portfolio-filter-btn[data-filter="all"]').click()
 			})
 		</script>
+		<script>
+			// Funkcja do aktualizacji statusu odwiedzającego
+			function updateVisitorStatus() {
+				const currentPage = window.location.pathname
+
+				fetch('visitors_api.php?action=update', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded',
+					},
+					body: 'page=' + encodeURIComponent(currentPage),
+				})
+			}
+
+			// Aktualizuj status co 30 sekund
+			updateVisitorStatus()
+			setInterval(updateVisitorStatus, 30000)
+		</script>
+		<script src="js/visitor-tracker.js"></script>
 	</body>
 </html>
