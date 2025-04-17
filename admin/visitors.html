@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Panel Administratora - Aktywni Odwiedzający</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="../js/auth.js"></script>
+		<script src="../js/active-visitors.js"></script>
+		<script src="../js/visitor-tracker.js"></script>
+	</head>
+	<body class="bg-gray-100">
+		<div class="min-h-screen flex">
+			<!-- Sidebar -->
+			<aside class="w-64 bg-gray-800 text-white p-6">
+				<h2 class="text-2xl font-bold mb-8">Panel Admin</h2>
+				<nav>
+					<a href="dashboard.html" class="block py-2 hover:text-gray-300">Dashboard</a>
+					<a href="gallery.html" class="block py-2 hover:text-gray-300">Galeria</a>
+					<a href="visitors.html" class="block py-2 hover:text-gray-300 text-yellow-400">Odwiedzający</a>
+					<button onclick="logout()" class="mt-8 w-full bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700">
+						Wyloguj
+					</button>
+				</nav>
+			</aside>
+
+			<!-- Main Content -->
+			<main class="flex-1 p-8">
+				<h1 class="text-3xl font-bold mb-8">Aktywni Odwiedzający</h1>
+
+				<div class="bg-white rounded-lg shadow p-6">
+					<div class="mb-4 flex justify-between items-center">
+						<h2 class="text-xl font-semibold">Lista aktywnych odwiedzających</h2>
+						<div class="flex items-center gap-4">
+							<button
+								onclick="updateVisitorsTable()"
+								class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
+							>
+								<i class="fas fa-sync-alt mr-2"></i>Odśwież
+							</button>
+							<span id="totalVisitors" class="bg-blue-500 text-white px-3 py-1 rounded">0 aktywnych</span>
+						</div>
+					</div>
+
+					<!-- Loading indicator -->
+					<div id="loadingIndicator" class="text-center py-8 hidden">
+						<div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mx-auto mb-4"></div>
+						<p class="text-gray-600">Ładowanie danych...</p>
+					</div>
+
+					<!-- Error message container -->
+					<div id="errorContainer" class="hidden mt-4 p-4 bg-red-100 text-red-700 rounded">
+						<div class="flex items-center">
+							<i class="fas fa-exclamation-circle mr-2"></i>
+							<p id="errorMessage"></p>
+						</div>
+						<button onclick="dismissError()" class="mt-2 text-sm text-red-700 hover:text-red-800">
+							Zamknij komunikat
+						</button>
+					</div>
+
+					<div id="tableContainer" class="overflow-x-auto">
+						<table class="min-w-full table-auto">
+							<thead>
+								<tr class="bg-gray-100">
+									<th class="px-4 py-2 text-left">ID</th>
+									<th class="px-4 py-2 text-left">Strona</th>
+									<th class="px-4 py-2 text-left">Ostatnia aktywność</th>
+								</tr>
+							</thead>
+							<tbody id="visitorsTableBody">
+								<!-- Dane będą dodawane dynamicznie -->
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- Debug Info Panel -->
+				<div class="mt-8 bg-white rounded-lg shadow p-6">
+					<h3 class="text-lg font-semibold mb-4">Informacje diagnostyczne</h3>
+					<div id="debugInfo" class="text-sm font-mono bg-gray-100 p-4 rounded">
+						<p>Ostatnie odświeżenie: <span id="lastUpdate">Nigdy</span></p>
+						<p>Status połączenia: <span id="connectionStatus">Sprawdzanie...</span></p>
+						<p>Błędy: <span id="errorLog">Brak</span></p>
+					</div>
+				</div>
+			</main>
+		</div>
+
+		<script>
+			// Sprawdź autoryzację
+			checkAuth()
+
+			let lastUpdateTime = null
+			let errorCount = 0
+
+			// Funkcja do formatowania daty
+			function formatDate(dateString) {
+				const date = new Date(dateString)
+				return date.toLocaleString('pl-PL')
+			}
+
+			// Funkcja do wyświetlania błędów
+			function showError(message) {
+				const errorContainer = document.getElementById('errorContainer')
+				const errorMessage = document.getElementById('errorMessage')
+				const errorLog = document.getElementById('errorLog')
+
+				errorMessage.textContent = message
+				errorContainer.classList.remove('hidden')
+
+				errorCount++
+				errorLog.textContent = `${errorCount} błędów (ostatni: ${message})`
+			}
+
+			function dismissError() {
+				document.getElementById('errorContainer').classList.add('hidden')
+			}
+
+			// Funkcja do aktualizacji statusu połączenia
+			function updateConnectionStatus(status) {
+				const connectionStatus = document.getElementById('connectionStatus')
+				connectionStatus.textContent = status
+				connectionStatus.className = status === 'Połączono' ? 'text-green-600' : 'text-red-600'
+			}
+
+			// Funkcja do aktualizacji czasu ostatniego odświeżenia
+			function updateLastRefreshTime() {
+				lastUpdateTime = new Date()
+				document.getElementById('lastUpdate').textContent = lastUpdateTime.toLocaleString('pl-PL')
+			}
+
+			// Funkcja do pokazywania/ukrywania wskaźnika ładowania
+			function toggleLoading(show) {
+				document.getElementById('loadingIndicator').classList.toggle('hidden', !show)
+				document.getElementById('tableContainer').classList.toggle('hidden', show)
+			}
+
+			// Funkcja do aktualizacji tabeli odwiedzających
+			async function updateVisitorsTable() {
+				toggleLoading(true)
+				try {
+					const response = await fetch('../visitors_api.php?action=get')
+					if (!response.ok) {
+						throw new Error(`Błąd HTTP: ${response.status}`)
+					}
+
+					const data = await response.json()
+					if (data.status === 'error') {
+						throw new Error(data.message || 'Wystąpił nieznany błąd')
+					}
+
+					const tableBody = document.getElementById('visitorsTableBody')
+					const totalVisitors = document.getElementById('totalVisitors')
+
+					// Wyczyść tabelę
+					tableBody.innerHTML = ''
+
+					// Dodaj nowe wiersze
+					data.visitors.forEach(visitor => {
+						const row = document.createElement('tr')
+						row.innerHTML = `
+							<td class="border px-4 py-2">${visitor.id}</td>
+							<td class="border px-4 py-2">${visitor.page}</td>
+							<td class="border px-4 py-2">${formatDate(visitor.last_activity)}</td>
+						`
+						tableBody.appendChild(row)
+					})
+
+					// Aktualizuj licznik
+					totalVisitors.textContent = `${data.visitors.length} aktywnych`
+
+					// Aktualizuj status i czas
+					updateConnectionStatus('Połączono')
+					updateLastRefreshTime()
+					dismissError()
+				} catch (error) {
+					console.error('Błąd podczas pobierania danych:', error)
+					showError(`Błąd podczas pobierania danych: ${error.message}`)
+					updateConnectionStatus('Błąd połączenia')
+				} finally {
+					toggleLoading(false)
+				}
+			}
+
+			// Aktualizuj tabelę co 10 sekund
+			const updateInterval = setInterval(updateVisitorsTable, 10000)
+
+			// Pierwsza aktualizacja przy załadowaniu strony
+			updateVisitorsTable()
+
+			// Czyszczenie interwału przy opuszczeniu strony
+			window.addEventListener('beforeunload', () => {
+				clearInterval(updateInterval)
+			})
+		</script>
+	</body>
+</html>

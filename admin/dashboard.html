@@ -9,6 +9,7 @@
 			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;600&display=swap"
 			rel="stylesheet"
 		/>
+		<script src="../js/visitor-tracker.js"></script>
 		<style>
 			:root {
 				--brown: #8b6d5c;
@@ -747,74 +748,70 @@
 								<h3 class="panel-title" id="form-title">Nowe zdjęcie</h3>
 							</div>
 
-							<form id="add-image-form">
-								<input type="hidden" id="image-id" value="" />
+							<form id="galleryForm" enctype="multipart/form-data">
 								<div class="form-group">
-									<label for="image-title">Tytuł</label>
-									<input
-										type="text"
-										id="image-title"
-										class="form-control"
-										placeholder="Np. Nowoczesne strzyżenie z grzywką"
-										required
-									/>
+									<label for="title">Tytuł</label>
+									<input type="text" id="title" name="title" class="form-control" required />
 								</div>
-
 								<div class="form-group">
-									<label for="image-description">Opis</label>
-									<textarea
-										id="image-description"
-										class="form-control"
-										placeholder="Krótki opis fryzury lub usługi"
-									></textarea>
+									<label for="description">Opis</label>
+									<textarea id="description" name="description" class="form-control" rows="3"></textarea>
 								</div>
-
 								<div class="form-group">
-									<label for="image-category">Kategoria</label>
-									<select id="image-category" class="form-control" required>
-										<option value="" disabled selected>Wybierz kategorię</option>
+									<label for="category">Kategoria</label>
+									<select id="category" name="category" class="form-control" required>
+										<option value="">Wybierz kategorię</option>
 										<option value="women">Damskie</option>
 										<option value="men">Męskie</option>
 										<option value="color">Koloryzacja</option>
 										<option value="special">Okolicznościowe</option>
 									</select>
 								</div>
-
 								<div class="form-group">
-									<label>Zdjęcie</label>
+									<label for="image">Zdjęcie</label>
 									<div class="file-upload">
-										<input type="file" id="image-file" accept="image/*" required />
 										<div class="file-upload-label">
-											<span class="file-upload-icon">
-												<i class="fas fa-cloud-upload-alt"></i>
-											</span>
-											<span class="file-upload-text"> Przeciągnij i upuść zdjęcie lub kliknij, aby wybrać plik </span>
+											<i class="fas fa-cloud-upload-alt file-upload-icon"></i>
+											<span>Przeciągnij i upuść zdjęcie lub kliknij, aby wybrać</span>
 										</div>
+										<input type="file" id="image" name="image" accept="image/*" class="form-control" required />
 									</div>
-									<div id="image-preview-container" class="preview-container hidden">
+									<div id="imagePreview" class="preview-container hidden">
 										<div class="image-preview">
-											<img id="image-preview" src="#" alt="Podgląd" />
+											<img id="previewImage" src="" alt="Podgląd" />
 											<button type="button" id="remove-image" class="remove-btn">
 												<i class="fas fa-times"></i>
 											</button>
 										</div>
 									</div>
 								</div>
-
 								<div class="form-group">
-									<button type="submit" class="btn" id="form-submit-btn">
-										<i class="fas fa-save"></i> Zapisz zdjęcie
-									</button>
-									<button
-										type="button"
-										class="btn"
-										id="cancel-edit-btn"
-										style="display: none; margin-left: 10px; background-color: #6c757d"
-									>
-										<i class="fas fa-times"></i> Anuluj edycję
+									<label for="alt_text">Tekst alternatywny</label>
+									<input
+										type="text"
+										id="alt_text"
+										name="alt_text"
+										class="form-control"
+										placeholder="Krótki opis zdjęcia dla czytników ekranowych"
+									/>
+								</div>
+								<div class="form-actions">
+									<button type="submit" id="submitBtn" class="btn"><i class="fas fa-save"></i> Zapisz</button>
+									<button type="button" id="cancelBtn" class="btn btn-danger hidden">
+										<i class="fas fa-times"></i> Anuluj
 									</button>
 								</div>
 							</form>
+						</div>
+					</div>
+
+					<!-- Sekcja aktywnych odwiedzających -->
+					<div class="bg-white p-6 rounded-lg shadow-md mb-6">
+						<h2 class="text-xl font-semibold mb-4">Aktywni odwiedzający</h2>
+						<div id="activeVisitors" class="space-y-2">
+							<div class="flex items-center justify-between">
+								<p>Ładowanie danych...</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -903,9 +900,9 @@
 			})
 
 			// Obsługa podglądu zdjęcia
-			const imageFileInput = document.getElementById('image-file')
-			const imagePreviewContainer = document.getElementById('image-preview-container')
-			const imagePreview = document.getElementById('image-preview')
+			const imageFileInput = document.getElementById('image')
+			const imagePreviewContainer = document.getElementById('imagePreview')
+			const imagePreview = document.getElementById('previewImage')
 			const removeImageBtn = document.getElementById('remove-image')
 
 			imageFileInput.addEventListener('change', function () {
@@ -985,19 +982,43 @@
 			}
 
 			// Wczytanie danych galerii
-			function loadGalleryData() {
-				// Sprawdź czy są dane w localStorage
-				const storedData = localStorage.getItem('galleryData')
+			async function loadGalleryData() {
+				try {
+					console.log('Ładowanie danych galerii...')
+					const response = await fetch('../gallery_api.php?action=get')
+					const result = await response.json()
+					console.log('Odpowiedź API:', result)
 
-				if (storedData) {
-					galleryData = JSON.parse(storedData)
-				} else {
-					// Jeśli nie ma danych, użyj przykładowych
-					galleryData = initialGalleryData()
-					localStorage.setItem('galleryData', JSON.stringify(galleryData))
+					if (result.success) {
+						galleryData = result.data || []
+						console.log('Załadowane dane galerii:', galleryData)
+
+						// Sprawdź ścieżki obrazów
+						galleryData.forEach(item => {
+							console.log('Ścieżka obrazu dla elementu:', {
+								id: item.id,
+								title: item.title,
+								original_path: item.image_src,
+								processed_path: item.image_src.startsWith('/') ? item.image_src.substring(1) : item.image_src,
+								final_url: item.image_src.startsWith('http')
+									? item.image_src
+									: '../' + (item.image_src.startsWith('/') ? item.image_src.substring(1) : item.image_src),
+							})
+						})
+					} else {
+						console.error('Błąd podczas pobierania danych:', result.error)
+						showToast('Błąd podczas pobierania danych: ' + result.error, 'error')
+						galleryData = []
+					}
+				} catch (error) {
+					console.error('Błąd podczas ładowania danych:', error)
+					showToast('Wystąpił błąd podczas ładowania danych', 'error')
+					galleryData = []
 				}
 
+				// Zawsze renderuj galerię, nawet jeśli jest pusta
 				renderGallery()
+				updateStatistics()
 			}
 
 			// Aktualizacja statystyk
@@ -1007,6 +1028,7 @@
 
 			// Renderowanie galerii
 			function renderGallery() {
+				console.log('Renderowanie galerii, dane:', galleryData)
 				const allImagesContainer = document.querySelector('.all-images')
 				const recentImagesContainer = document.querySelector('.recent-images')
 
@@ -1014,8 +1036,26 @@
 				allImagesContainer.innerHTML = ''
 				recentImagesContainer.innerHTML = ''
 
+				if (!Array.isArray(galleryData) || galleryData.length === 0) {
+					// Pokaż informację o braku danych
+					const noDataMessage = document.createElement('div')
+					noDataMessage.className = 'text-center p-4'
+					noDataMessage.innerHTML = `
+						<i class="fas fa-images fa-3x text-gray-400 mb-3"></i>
+						<p class="text-gray-500">Brak zdjęć w galerii</p>
+						<a href="#" class="btn btn-sm mt-3" data-section="add-images">Dodaj pierwsze zdjęcie</a>
+					`
+					allImagesContainer.appendChild(noDataMessage.cloneNode(true))
+					recentImagesContainer.appendChild(noDataMessage.cloneNode(true))
+					return
+				}
+
 				// Sortowanie po dacie (od najnowszych)
-				const sortedData = [...galleryData].sort((a, b) => new Date(b.date) - new Date(a.date))
+				const sortedData = [...galleryData].sort((a, b) => {
+					const dateA = a.created_at || a.date || '1970-01-01'
+					const dateB = b.created_at || b.date || '1970-01-01'
+					return new Date(dateB) - new Date(dateA)
+				})
 
 				// Renderuj wszystkie zdjęcia
 				sortedData.forEach(item => {
@@ -1032,27 +1072,32 @@
 
 			// Tworzenie elementu galerii
 			function createGalleryItem(item) {
+				console.log('Tworzenie elementu galerii:', item)
 				const galleryItem = document.createElement('div')
 				galleryItem.className = 'gallery-item'
 				galleryItem.dataset.id = item.id
 
+				// Użyj image_src lub stwórz prawidłową ścieżkę względną
+				const imagePath = item.image_src.startsWith('/') ? item.image_src.substring(1) : item.image_src
+				const imageUrl = imagePath.startsWith('http') ? imagePath : '../' + imagePath
+
 				galleryItem.innerHTML = `
-          <div class="gallery-image">
-            <img src="${item.imageSrc}" alt="${item.title}">
-          </div>
-          <div class="gallery-info">
-            <h4 class="gallery-title">${item.title}</h4>
-            <p class="gallery-category">${getCategoryName(item.category)}</p>
-            <div class="gallery-actions">
-              <button class="btn btn-sm edit-gallery-item">
-                <i class="fas fa-edit"></i> Edytuj
-              </button>
-              <button class="btn btn-sm btn-danger delete-gallery-item">
-                <i class="fas fa-trash"></i> Usuń
-              </button>
-            </div>
-          </div>
-        `
+					<div class="gallery-image">
+						<img src="${imageUrl}" alt="${item.title}" onerror="this.src='../images/placeholder.jpg'">
+					</div>
+					<div class="gallery-info">
+						<h4 class="gallery-title">${item.title}</h4>
+						<p class="gallery-category">${getCategoryName(item.category)}</p>
+						<div class="gallery-actions">
+							<button class="btn btn-sm edit-gallery-item">
+								<i class="fas fa-edit"></i> Edytuj
+							</button>
+							<button class="btn btn-sm btn-danger delete-gallery-item">
+								<i class="fas fa-trash"></i> Usuń
+							</button>
+						</div>
+					</div>
+				`
 
 				// Dodaj obsługę usuwania
 				galleryItem.querySelector('.delete-gallery-item').addEventListener('click', function () {
@@ -1068,63 +1113,267 @@
 			}
 
 			// Usuwanie elementu galerii
-			function deleteGalleryItem(id) {
+			async function deleteGalleryItem(id) {
 				if (confirm('Czy na pewno chcesz usunąć to zdjęcie?')) {
-					galleryData = galleryData.filter(item => item.id !== id)
-					localStorage.setItem('galleryData', JSON.stringify(galleryData))
+					try {
+						const response = await fetch(`../gallery_api.php?action=delete&id=${id}`, {
+							method: 'POST',
+						})
+						const result = await response.json()
 
-					renderGallery()
-					updateStatistics()
-					showToast('Zdjęcie zostało usunięte', 'success')
+						if (result.success) {
+							await loadGalleryData() // Odśwież dane
+							showToast('Zdjęcie zostało usunięte', 'success')
+						} else {
+							showToast('Błąd podczas usuwania zdjęcia: ' + result.error, 'error')
+						}
+					} catch (error) {
+						console.error('Błąd podczas usuwania:', error)
+						showToast('Wystąpił błąd podczas usuwania zdjęcia', 'error')
+					}
 				}
 			}
 
 			// Edycja elementu galerii
-			function editGalleryItem(id) {
-				// Znajdź element w danych
-				const item = galleryData.find(item => item.id === id)
-				if (!item) return
+			async function editGalleryItem(id) {
+				try {
+					console.log('Edycja elementu o ID:', id)
+					// Znajdź element w danych
+					const item = galleryData.find(item => item.id === id)
+					if (!item) {
+						console.error('Nie znaleziono elementu o ID:', id)
+						return
+					}
 
-				// Przejdź do sekcji dodawania/edycji
-				document.querySelector(".admin-menu-link[data-section='add-images']").click()
+					console.log('Znaleziony element:', item)
 
-				// Zmień tytuł i tekst przycisku na tryb edycji
-				document.getElementById('form-title').textContent = 'Edycja zdjęcia'
-				document.getElementById('form-submit-btn').innerHTML = '<i class="fas fa-save"></i> Zapisz zmiany'
+					// Przejdź do sekcji dodawania/edycji
+					document.querySelector(".admin-menu-link[data-section='add-images']").click()
 
-				// Pokaż przycisk anulowania
-				document.getElementById('cancel-edit-btn').style.display = 'inline-block'
+					// Zmień tytuł i tekst przycisku na tryb edycji
+					document.getElementById('form-title').textContent = 'Edycja zdjęcia'
+					document.getElementById('submitBtn').textContent = 'Zapisz zmiany'
 
-				// Wypełnij formularz danymi
-				document.getElementById('image-id').value = item.id
-				document.getElementById('image-title').value = item.title
-				document.getElementById('image-description').value = item.description || ''
-				document.getElementById('image-category').value = item.category
+					// Dodaj ID edytowanego elementu do formularza
+					const form = document.getElementById('galleryForm')
+					form.dataset.editId = id
 
-				// Pokaż podgląd zdjęcia
-				imagePreview.src = item.imageSrc
-				imagePreviewContainer.classList.remove('hidden')
+					// Pokaż przycisk anulowania
+					const cancelBtn = document.getElementById('cancelBtn')
+					cancelBtn.classList.remove('hidden')
+
+					// Wypełnij formularz danymi
+					document.getElementById('title').value = item.title || ''
+					document.getElementById('description').value = item.description || ''
+					document.getElementById('category').value = item.category || ''
+					document.getElementById('alt_text').value = item.alt_text || ''
+
+					// Pokaż podgląd aktualnego zdjęcia
+					const imagePreview = document.getElementById('previewImage')
+					const imagePreviewContainer = document.getElementById('imagePreview')
+					if (imagePreview && imagePreviewContainer) {
+						const imagePath = item.image_src.startsWith('/') ? item.image_src.substring(1) : item.image_src
+						const imageUrl = imagePath.startsWith('http') ? imagePath : '../' + imagePath
+						imagePreview.src = imageUrl
+						imagePreviewContainer.classList.remove('hidden')
+					}
+
+					// Zmodyfikuj obsługę formularza dla trybu edycji
+					const submitHandler = async function (e) {
+						e.preventDefault()
+						console.log('Zapisywanie edytowanego elementu...')
+
+						const formData = new FormData(form)
+						formData.append('id', id)
+
+						try {
+							await saveGalleryItem(formData)
+							showToast('Zmiany zostały zapisane', 'success')
+							resetForm()
+							await loadGalleryData()
+						} catch (error) {
+							console.error('Błąd podczas zapisywania:', error)
+							showToast('Wystąpił błąd podczas zapisywania: ' + error.message, 'error')
+						}
+					}
+
+					// Usuń poprzedni event listener i dodaj nowy
+					form.removeEventListener('submit', submitHandler)
+					form.addEventListener('submit', submitHandler)
+				} catch (error) {
+					console.error('Błąd podczas edycji:', error)
+					showToast('Wystąpił błąd podczas ładowania danych do edycji', 'error')
+				}
 			}
 
-			// Obsługa przycisku anulowania edycji
-			document.getElementById('cancel-edit-btn').addEventListener('click', function () {
+			// Resetowanie formularza
+			function resetForm() {
+				const form = document.getElementById('galleryForm')
+				const imagePreviewContainer = document.getElementById('imagePreview')
+				const imagePreview = document.getElementById('previewImage')
+				const submitButton = document.getElementById('submitBtn')
+				const cancelButton = document.getElementById('cancelBtn')
+
+				if (form) {
+					form.reset()
+					delete form.dataset.editId
+				}
+
+				if (imagePreviewContainer) {
+					imagePreviewContainer.classList.add('hidden')
+				}
+
+				if (imagePreview) {
+					imagePreview.src = ''
+				}
+
+				if (submitButton) {
+					submitButton.textContent = 'Zapisz'
+				}
+
+				if (cancelButton) {
+					cancelButton.classList.add('hidden')
+				}
+
+				// Przywróć oryginalny tytuł formularza
+				document.getElementById('form-title').textContent = 'Nowe zdjęcie'
+			}
+
+			// Obsługa przycisku anulowania
+			document.getElementById('cancelBtn').addEventListener('click', function () {
 				resetForm()
+				showToast('Edycja została anulowana', 'success')
 			})
 
-			// Funkcja resetująca formularz
-			function resetForm() {
-				// Zmień tytuł i tekst przycisku na tryb dodawania
-				document.getElementById('form-title').textContent = 'Nowe zdjęcie'
-				document.getElementById('form-submit-btn').innerHTML = '<i class="fas fa-save"></i> Zapisz zdjęcie'
+			// Modyfikacja funkcji saveGalleryItem
+			async function saveGalleryItem(formData) {
+				try {
+					const form = document.getElementById('galleryForm')
+					if (!form) {
+						throw new Error('Nie znaleziono formularza')
+					}
 
-				// Ukryj przycisk anulowania
-				document.getElementById('cancel-edit-btn').style.display = 'none'
+					const submitButton = document.getElementById('submitBtn')
+					if (!submitButton) {
+						throw new Error('Nie znaleziono przycisku submit')
+					}
 
-				// Wyczyść formularz
-				document.getElementById('image-id').value = ''
-				document.getElementById('add-image-form').reset()
-				imagePreviewContainer.classList.add('hidden')
+					// Pobierz ID edytowanego elementu
+					const editId = form.dataset.editId
+					const isEdit = editId && editId !== 'null' && editId !== ''
+
+					// Pobierz dane z formularza
+					const title = formData.get('title')
+					const category = formData.get('category')
+					const imageFile = formData.get('image')
+
+					console.log('Dane formularza:', {
+						isEdit,
+						editId,
+						title,
+						category,
+						hasImageFile: !!imageFile && imageFile.size > 0,
+					})
+
+					// Walidacja
+					if (!title || !category) {
+						throw new Error('Tytuł i kategoria są wymagane')
+					}
+
+					if (!isEdit && (!imageFile || imageFile.size === 0)) {
+						throw new Error('Proszę wybrać plik zdjęcia')
+					}
+
+					// Przygotuj dane
+					const data = {
+						title: title,
+						description: formData.get('description') || '',
+						category: category,
+						alt_text: (formData.get('alt_text') || title) + ' - wykonana w salonie Migdał w Tarnowie',
+					}
+
+					// Jeśli mamy nowy plik, wyślij go najpierw
+					if (imageFile && imageFile.size > 0) {
+						const uploadFormData = new FormData()
+						uploadFormData.append('image', imageFile)
+
+						const uploadResponse = await fetch('../upload.php', {
+							method: 'POST',
+							body: uploadFormData,
+						})
+
+						const uploadResult = await uploadResponse.json()
+						if (!uploadResult.success) {
+							throw new Error(uploadResult.message || 'Błąd podczas uploadu pliku')
+						}
+
+						data.image_src = uploadResult.file_path
+					} else if (isEdit) {
+						// Jeśli edytujemy i nie ma nowego pliku, zachowaj obecną ścieżkę
+						const existingItem = galleryData.find(item => item.id === parseInt(editId))
+						if (existingItem) {
+							data.image_src = existingItem.image_src
+						} else {
+							throw new Error('Nie znaleziono edytowanego elementu')
+						}
+					}
+
+					// Wyślij dane do API
+					let endpoint
+					let method = 'POST'
+
+					if (isEdit) {
+						endpoint = `../gallery_api.php?action=update&id=${editId}`
+					} else {
+						endpoint = '../gallery_api.php?action=add'
+					}
+
+					console.log('Wysyłanie do endpointu:', endpoint, 'z danymi:', data)
+
+					submitButton.disabled = true
+					submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Zapisywanie...'
+
+					try {
+						const response = await fetch(endpoint, {
+							method: method,
+							headers: {
+								'Content-Type': 'application/json',
+							},
+							body: JSON.stringify(data),
+						})
+
+						const result = await response.json()
+						console.log('Odpowiedź z serwera:', result)
+
+						if (!result.success) {
+							throw new Error(result.error || 'Nieznany błąd podczas zapisywania')
+						}
+
+						await loadGalleryData() // Odśwież dane
+						showToast(isEdit ? 'Zmiany zostały zapisane' : 'Nowe zdjęcie zostało dodane', 'success')
+						resetForm()
+					} finally {
+						submitButton.disabled = false
+						submitButton.innerHTML = isEdit ? 'Zapisz zmiany' : 'Zapisz'
+					}
+				} catch (error) {
+					console.error('Błąd podczas zapisywania:', error)
+					showToast('Błąd: ' + error.message, 'error')
+					throw error
+				}
 			}
+
+			// Obsługa formularza
+			document.getElementById('galleryForm').addEventListener('submit', async function (e) {
+				e.preventDefault()
+				const formData = new FormData(this)
+
+				try {
+					await saveGalleryItem(formData)
+				} catch (error) {
+					console.error('Błąd podczas przetwarzania formularza:', error)
+				}
+			})
 
 			// Pobranie nazwy kategorii
 			function getCategoryName(categoryKey) {
@@ -1137,118 +1386,6 @@
 
 				return categories[categoryKey] || categoryKey
 			}
-
-			// Obsługa formularza dodawania/edycji zdjęć
-			document.getElementById('add-image-form').addEventListener('submit', function (e) {
-				e.preventDefault()
-
-				const id = document.getElementById('image-id').value
-				const title = document.getElementById('image-title').value
-				const description = document.getElementById('image-description').value
-				const category = document.getElementById('image-category').value
-
-				// Sprawdź, czy to edycja czy dodanie nowego zdjęcia
-				if (id) {
-					// Tryb edycji - znajdź istniejący element
-					const index = galleryData.findIndex(item => item.id == id)
-					if (index !== -1) {
-						const imageFile = document.getElementById('image-file').files[0]
-
-						// Aktualizuj dane
-						const updatedItem = {
-							...galleryData[index],
-							title: title,
-							description: description,
-							category: category,
-						}
-
-						// Jeśli wybrano nowe zdjęcie, aktualizuj je
-						if (imageFile) {
-							const reader = new FileReader()
-
-							reader.onload = function (e) {
-								updatedItem.imageSrc = e.target.result
-
-								// Aktualizuj element w tablicy
-								galleryData[index] = updatedItem
-								localStorage.setItem('galleryData', JSON.stringify(galleryData))
-
-								// Resetuj formularz
-								resetForm()
-
-								// Odśwież galerię
-								renderGallery()
-
-								// Pokaż komunikat o sukcesie
-								showToast('Zdjęcie zostało zaktualizowane', 'success')
-
-								// Przejdź do sekcji galerii
-								document.querySelector(".admin-menu-link[data-section='gallery']").click()
-							}
-
-							reader.readAsDataURL(imageFile)
-						} else {
-							// Aktualizuj element w tablicy bez zmiany zdjęcia
-							galleryData[index] = updatedItem
-							localStorage.setItem('galleryData', JSON.stringify(galleryData))
-
-							// Resetuj formularz
-							resetForm()
-
-							// Odśwież galerię
-							renderGallery()
-
-							// Pokaż komunikat o sukcesie
-							showToast('Zdjęcie zostało zaktualizowane', 'success')
-
-							// Przejdź do sekcji galerii
-							document.querySelector(".admin-menu-link[data-section='gallery']").click()
-						}
-					}
-				} else {
-					// Tryb dodawania nowego zdjęcia
-					const imageFile = document.getElementById('image-file').files[0]
-
-					if (!imageFile) {
-						showToast('Wybierz zdjęcie', 'error')
-						return
-					}
-
-					// W rzeczywistej aplikacji tutaj byłby upload pliku na serwer
-					// W naszym przypadku używamy lokalnego URL
-					const reader = new FileReader()
-
-					reader.onload = function (e) {
-						const newItem = {
-							id: Date.now(), // Prosty unikalny ID
-							title: title,
-							description: description,
-							category: category,
-							imageSrc: e.target.result, // URL obrazu
-							date: new Date().toISOString().split('T')[0], // Dzisiejsza data
-						}
-
-						// Dodaj nowy element do danych galerii
-						galleryData.push(newItem)
-						localStorage.setItem('galleryData', JSON.stringify(galleryData))
-
-						// Wyczyść formularz
-						resetForm()
-
-						// Odśwież galerię i statystyki
-						renderGallery()
-						updateStatistics()
-
-						// Pokaż komunikat o sukcesie
-						showToast('Zdjęcie zostało dodane', 'success')
-
-						// Przejdź do sekcji galerii
-						document.querySelector(".admin-menu-link[data-section='gallery']").click()
-					}
-
-					reader.readAsDataURL(imageFile)
-				}
-			})
 
 			// Toast notification
 			function showToast(message, type = 'success') {
@@ -1283,6 +1420,40 @@
 			document.getElementById('toast-close').addEventListener('click', function () {
 				document.getElementById('toast').classList.remove('show')
 			})
+
+			// Funkcja do pobierania i wyświetlania aktywnych odwiedzających
+			async function updateActiveVisitors() {
+				try {
+					const response = await fetch('../visitors_api.php?action=get')
+					const data = await response.json()
+
+					if (data.success) {
+						const visitorsDiv = document.getElementById('activeVisitors')
+						visitorsDiv.innerHTML = ''
+
+						if (data.visitors.length === 0) {
+							visitorsDiv.innerHTML = '<p class="text-gray-500">Brak aktywnych odwiedzających</p>'
+							return
+						}
+
+						data.visitors.forEach(visitor => {
+							const visitorElement = document.createElement('div')
+							visitorElement.className = 'flex items-center justify-between bg-gray-50 p-3 rounded'
+							visitorElement.innerHTML = `
+								<span class="font-medium">${visitor.page}</span>
+								<span class="text-gray-600">Liczba: ${visitor.count}</span>
+							`
+							visitorsDiv.appendChild(visitorElement)
+						})
+					}
+				} catch (error) {
+					console.error('Błąd podczas pobierania danych o odwiedzających:', error)
+				}
+			}
+
+			// Aktualizuj dane co 30 sekund
+			updateActiveVisitors()
+			setInterval(updateActiveVisitors, 30000)
 		</script>
 	</body>
 </html>
