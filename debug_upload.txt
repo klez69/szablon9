@@ -1,0 +1,1151 @@
+2025-04-17 10:55:43 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 13.jpg
+            [full_path] => 13.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpmsxQLn
+            [error] => 0
+            [size] => 447915
+        )
+
+)
+
+2025-04-17 10:55:43 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpmsxQLn
+    [target] => /home/users/migdalta/public_html/szablon9/uploads/6800c20f3b7b5.jpg
+    [permissions] => 0755
+)
+
+2025-04-17 10:55:43 - Próba zapisu do bazy
+Data: Array
+(
+    [:title] => Nowe zdjęcie
+    [:description] => Opis zostanie dodany
+    [:category] => other
+    [:image_src] => uploads/6800c20f3b7b5.jpg
+    [:alt_text] => 13.jpg
+)
+
+2025-04-17 10:55:43 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => uploads/6800c20f3b7b5.jpg
+    [id] => 2
+)
+
+2025-04-17 11:07:17 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 27.jpg
+            [full_path] => 27.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpVkI1TU
+            [error] => 0
+            [size] => 517961
+        )
+
+)
+
+2025-04-17 11:07:17 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpVkI1TU
+    [target] => /home/users/migdalta/public_html/szablon9/uploads/6800c4c5ba5a9.jpg
+    [permissions] => 0755
+)
+
+2025-04-17 11:07:17 - Próba zapisu do bazy
+Data: Array
+(
+    [:title] => Nowe zdjęcie
+    [:description] => Opis zostanie dodany
+    [:category] => other
+    [:image_src] => uploads/6800c4c5ba5a9.jpg
+    [:alt_text] => 27.jpg
+)
+
+2025-04-17 11:07:17 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => uploads/6800c4c5ba5a9.jpg
+    [id] => 3
+)
+
+2025-04-17 11:07:40 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 26.jpg
+            [full_path] => 26.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpJoUI5P
+            [error] => 0
+            [size] => 422358
+        )
+
+)
+
+2025-04-17 11:07:40 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpJoUI5P
+    [target] => /home/users/migdalta/public_html/szablon9/uploads/6800c4dc8a224.jpg
+    [permissions] => 0755
+)
+
+2025-04-17 11:07:40 - Próba zapisu do bazy
+Data: Array
+(
+    [:title] => Nowe zdjęcie
+    [:description] => Opis zostanie dodany
+    [:category] => other
+    [:image_src] => uploads/6800c4dc8a224.jpg
+    [:alt_text] => 26.jpg
+)
+
+2025-04-17 11:07:40 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => uploads/6800c4dc8a224.jpg
+    [id] => 5
+)
+
+2025-04-17 11:14:10 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 1.jpg
+            [full_path] => 1.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpnVvRf4
+            [error] => 0
+            [size] => 431872
+        )
+
+)
+
+2025-04-17 11:14:10 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpnVvRf4
+    [target] => /home/users/migdalta/public_html/szablon9/uploads/6800c6625f24a.jpg
+    [permissions] => 0755
+)
+
+2025-04-17 11:14:10 - Próba zapisu do bazy
+Data: Array
+(
+    [:title] => Nowe zdjęcie
+    [:description] => Opis zostanie dodany
+    [:category] => other
+    [:image_src] => uploads/6800c6625f24a.jpg
+    [:alt_text] => 1.jpg
+)
+
+2025-04-17 11:14:10 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => uploads/6800c6625f24a.jpg
+    [id] => 7
+)
+
+2025-04-17 11:16:47 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 1.jpg
+            [full_path] => 1.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpmOxBcy
+            [error] => 0
+            [size] => 431872
+        )
+
+)
+
+2025-04-17 11:16:47 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpmOxBcy
+    [target] => /home/users/migdalta/public_html/szablon9/uploads/6800c6ffc3dce.jpg
+    [permissions] => 0755
+)
+
+2025-04-17 11:16:47 - Próba zapisu do bazy
+Data: Array
+(
+    [:title] => Nowe zdjęcie
+    [:description] => Opis zostanie dodany
+    [:category] => other
+    [:image_src] => uploads/6800c6ffc3dce.jpg
+    [:alt_text] => 1.jpg
+)
+
+2025-04-17 11:16:47 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => uploads/6800c6ffc3dce.jpg
+    [id] => 8
+)
+
+2025-04-17 11:16:47 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 1.jpg
+            [full_path] => 1.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpste9V0
+            [error] => 0
+            [size] => 431872
+        )
+
+)
+
+2025-04-17 11:16:47 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpste9V0
+    [target] => /home/users/migdalta/public_html/szablon9/uploads/6800c6ffd39af.jpg
+    [permissions] => 0755
+)
+
+2025-04-17 11:16:47 - Próba zapisu do bazy
+Data: Array
+(
+    [:title] => Nowe zdjęcie
+    [:description] => Opis zostanie dodany
+    [:category] => other
+    [:image_src] => uploads/6800c6ffd39af.jpg
+    [:alt_text] => 1.jpg
+)
+
+2025-04-17 11:16:47 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => uploads/6800c6ffd39af.jpg
+    [id] => 9
+)
+
+2025-04-17 11:34:32 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 13.jpg
+            [full_path] => 13.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpuAhFZD
+            [error] => 0
+            [size] => 447915
+        )
+
+)
+
+2025-04-17 11:34:32 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpuAhFZD
+    [target] => /home/users/migdalta/public_html/szablon9/uploads/6800cb28612aa.jpg
+    [permissions] => 0755
+)
+
+2025-04-17 11:34:32 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => uploads/6800cb28612aa.jpg
+)
+
+2025-04-17 11:36:24 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 27.jpg
+            [full_path] => 27.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpdc6vaE
+            [error] => 0
+            [size] => 517961
+        )
+
+)
+
+2025-04-17 11:36:24 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpdc6vaE
+    [target] => /home/users/migdalta/public_html/szablon9/uploads/6800cb98905a3.jpg
+    [permissions] => 0755
+)
+
+2025-04-17 11:36:24 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => uploads/6800cb98905a3.jpg
+)
+
+2025-04-17 11:37:15 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 1.jpg
+            [full_path] => 1.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpJK1KL1
+            [error] => 0
+            [size] => 431872
+        )
+
+)
+
+2025-04-17 11:37:15 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpJK1KL1
+    [target] => /home/users/migdalta/public_html/szablon9/uploads/6800cbcb44eb8.jpg
+    [permissions] => 0755
+)
+
+2025-04-17 11:37:15 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => uploads/6800cbcb44eb8.jpg
+)
+
+2025-04-17 11:39:35 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 1.jpg
+            [full_path] => 1.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpleTkTe
+            [error] => 0
+            [size] => 431872
+        )
+
+)
+
+2025-04-17 11:39:35 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpleTkTe
+    [target] => /home/users/migdalta/public_html/szablon9/uploads/6800cc57da041.jpg
+    [permissions] => 0755
+)
+
+2025-04-17 11:39:35 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => uploads/6800cc57da041.jpg
+)
+
+2025-04-17 11:41:53 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 1.jpg
+            [full_path] => 1.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpx0kJlC
+            [error] => 0
+            [size] => 431872
+        )
+
+)
+
+2025-04-17 11:41:53 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpx0kJlC
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800cce108f2d.jpg
+    [permissions] => 0770
+)
+
+2025-04-17 11:41:53 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800cce108f2d.jpg
+)
+
+2025-04-17 11:44:30 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 1.jpg
+            [full_path] => 1.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpgsya8e
+            [error] => 0
+            [size] => 431872
+        )
+
+)
+
+2025-04-17 11:44:30 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpgsya8e
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800cd7e18bbe.jpg
+    [permissions] => 0770
+)
+
+2025-04-17 11:44:30 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800cd7e18bbe.jpg
+)
+
+2025-04-17 11:47:09 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 13.jpg
+            [full_path] => 13.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpA7naLm
+            [error] => 0
+            [size] => 447915
+        )
+
+)
+
+2025-04-17 11:47:09 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpA7naLm
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800ce1da560f.jpg
+    [permissions] => 0770
+)
+
+2025-04-17 11:47:09 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800ce1da560f.jpg
+)
+
+2025-04-17 11:49:22 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 28.jpg
+            [full_path] => 28.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpfBUgv3
+            [error] => 0
+            [size] => 538462
+        )
+
+)
+
+2025-04-17 11:49:22 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpfBUgv3
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800cea275eea.jpg
+    [permissions] => 0770
+)
+
+2025-04-17 11:49:22 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800cea275eea.jpg
+)
+
+2025-04-17 11:51:03 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 15.jpg
+            [full_path] => 15.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpAIT7Zz
+            [error] => 0
+            [size] => 457009
+        )
+
+)
+
+2025-04-17 11:51:03 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpAIT7Zz
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800cf07562eb.jpg
+    [permissions] => 0770
+)
+
+2025-04-17 11:51:03 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800cf07562eb.jpg
+)
+
+2025-04-17 11:51:03 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 15.jpg
+            [full_path] => 15.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpJSBqa9
+            [error] => 0
+            [size] => 457009
+        )
+
+)
+
+2025-04-17 11:51:03 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpJSBqa9
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800cf075e683.jpg
+    [permissions] => 0770
+)
+
+2025-04-17 11:51:03 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800cf075e683.jpg
+)
+
+2025-04-17 11:52:32 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 34.jpg
+            [full_path] => 34.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpOECT9v
+            [error] => 0
+            [size] => 78423
+        )
+
+)
+
+2025-04-17 11:52:32 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpOECT9v
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800cf6005c4d.jpg
+    [permissions] => 0770
+)
+
+2025-04-17 11:52:32 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800cf6005c4d.jpg
+)
+
+2025-04-17 11:52:32 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 34.jpg
+            [full_path] => 34.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpsUyKat
+            [error] => 0
+            [size] => 78423
+        )
+
+)
+
+2025-04-17 11:52:32 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpsUyKat
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800cf60061ce.jpg
+    [permissions] => 0770
+)
+
+2025-04-17 11:52:32 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800cf60061ce.jpg
+)
+
+2025-04-17 11:52:32 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 34.jpg
+            [full_path] => 34.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpi7RVal
+            [error] => 0
+            [size] => 78423
+        )
+
+)
+
+2025-04-17 11:52:32 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpi7RVal
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800cf600860d.jpg
+    [permissions] => 0770
+)
+
+2025-04-17 11:52:32 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800cf600860d.jpg
+)
+
+2025-04-17 11:53:55 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 37.jpg
+            [full_path] => 37.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpG4uWrW
+            [error] => 0
+            [size] => 184129
+        )
+
+)
+
+2025-04-17 11:53:55 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpG4uWrW
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800cfb33d357.jpg
+    [permissions] => 0770
+)
+
+2025-04-17 11:53:55 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800cfb33d357.jpg
+)
+
+2025-04-17 11:55:11 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 38.jpg
+            [full_path] => 38.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpfOzYGJ
+            [error] => 0
+            [size] => 281011
+        )
+
+)
+
+2025-04-17 11:55:11 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpfOzYGJ
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800cfff29fbc.jpg
+    [permissions] => 0770
+)
+
+2025-04-17 11:55:11 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800cfff29fbc.jpg
+)
+
+2025-04-17 11:56:35 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 3.jpg
+            [full_path] => 3.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpF16jDT
+            [error] => 0
+            [size] => 420787
+        )
+
+)
+
+2025-04-17 11:56:35 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpF16jDT
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800d0535ce57.jpg
+    [permissions] => 0770
+)
+
+2025-04-17 11:56:35 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800d0535ce57.jpg
+)
+
+2025-04-17 11:58:25 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 40.jpg
+            [full_path] => 40.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpTAGE2T
+            [error] => 0
+            [size] => 353546
+        )
+
+)
+
+2025-04-17 11:58:25 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpTAGE2T
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800d0c195bc5.jpg
+    [permissions] => 0770
+)
+
+2025-04-17 11:58:25 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800d0c195bc5.jpg
+)
+
+2025-04-17 12:02:19 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 35.jpg
+            [full_path] => 35.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpVBBZzF
+            [error] => 0
+            [size] => 64817
+        )
+
+)
+
+2025-04-17 12:02:19 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpVBBZzF
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800d1aba8f10.jpg
+    [permissions] => 0770
+)
+
+2025-04-17 12:02:19 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800d1aba8f10.jpg
+)
+
+2025-04-17 12:07:15 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 11.jpg
+            [full_path] => 11.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpJN4yaR
+            [error] => 0
+            [size] => 493420
+        )
+
+)
+
+2025-04-17 12:07:15 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpJN4yaR
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800d2d3206cd.jpg
+    [permissions] => 0770
+)
+
+2025-04-17 12:07:15 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800d2d3206cd.jpg
+)
+
+2025-04-17 12:07:59 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 36.jpg
+            [full_path] => 36.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/php4ijxo9
+            [error] => 0
+            [size] => 127320
+        )
+
+)
+
+2025-04-17 12:07:59 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/php4ijxo9
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800d2ff29be5.jpg
+    [permissions] => 0770
+)
+
+2025-04-17 12:07:59 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800d2ff29be5.jpg
+)
+
+2025-04-17 12:52:09 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 36.jpg
+            [full_path] => 36.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpVIKccy
+            [error] => 0
+            [size] => 127320
+        )
+
+)
+
+2025-04-17 12:52:09 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpVIKccy
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800dd5941cca.jpg
+    [permissions] => 0770
+)
+
+2025-04-17 12:52:09 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800dd5941cca.jpg
+)
+
+2025-04-17 12:52:09 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 36.jpg
+            [full_path] => 36.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/php2feQ6z
+            [error] => 0
+            [size] => 127320
+        )
+
+)
+
+2025-04-17 12:52:09 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/php2feQ6z
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800dd5943a1c.jpg
+    [permissions] => 0770
+)
+
+2025-04-17 12:52:09 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800dd5943a1c.jpg
+)
+
+2025-04-17 12:52:33 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 37.jpg
+            [full_path] => 37.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/php4SfOkH
+            [error] => 0
+            [size] => 184129
+        )
+
+)
+
+2025-04-17 12:52:33 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/php4SfOkH
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800dd718eca0.jpg
+    [permissions] => 0770
+)
+
+2025-04-17 12:52:33 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800dd718eca0.jpg
+)
+
+2025-04-17 12:52:33 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 37.jpg
+            [full_path] => 37.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpfD8lrL
+            [error] => 0
+            [size] => 184129
+        )
+
+)
+
+2025-04-17 12:52:33 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpfD8lrL
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800dd7198cae.jpg
+    [permissions] => 0770
+)
+
+2025-04-17 12:52:33 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800dd7198cae.jpg
+)
+
+2025-04-17 12:52:33 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 37.jpg
+            [full_path] => 37.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phphY5RSy
+            [error] => 0
+            [size] => 184129
+        )
+
+)
+
+2025-04-17 12:52:33 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phphY5RSy
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800dd719976c.jpg
+    [permissions] => 0770
+)
+
+2025-04-17 12:52:33 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800dd719976c.jpg
+)
+
+2025-04-17 13:39:12 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => IMG_0070.jpeg
+            [full_path] => IMG_0070.jpeg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpxPHQvm
+            [error] => 0
+            [size] => 213579
+        )
+
+)
+
+2025-04-17 13:39:12 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpxPHQvm
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800e860edd40.jpeg
+    [permissions] => 0770
+)
+
+2025-04-17 13:39:12 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800e860edd40.jpeg
+)
+
+2025-04-17 13:44:18 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => IMG_0071.jpeg
+            [full_path] => IMG_0071.jpeg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpoTTCnf
+            [error] => 0
+            [size] => 352699
+        )
+
+)
+
+2025-04-17 13:44:18 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpoTTCnf
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/6800e99256fe1.jpeg
+    [permissions] => 0770
+)
+
+2025-04-17 13:44:18 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/6800e99256fe1.jpeg
+)
+
+2025-04-17 20:50:56 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 4.jpg
+            [full_path] => 4.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpZwUsJo
+            [error] => 0
+            [size] => 436823
+        )
+
+)
+
+2025-04-17 20:50:56 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpZwUsJo
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/68014d907dcbc.jpg
+    [permissions] => 0770
+)
+
+2025-04-17 20:50:56 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/68014d907dcbc.jpg
+)
+
+2025-04-18 10:26:23 - Rozpoczęcie uploadu
+Data: Array
+(
+    [image] => Array
+        (
+            [name] => 5.jpg
+            [full_path] => 5.jpg
+            [type] => image/jpeg
+            [tmp_name] => /usr/local/php83/tmp/phpN0qxfD
+            [error] => 0
+            [size] => 778253
+        )
+
+)
+
+2025-04-18 10:26:23 - Próba przeniesienia pliku
+Data: Array
+(
+    [source] => /usr/local/php83/tmp/phpN0qxfD
+    [target] => /home/users/migdalta/public_html/szablon9/images/uploads/68020caf1e55f.jpg
+    [permissions] => 0770
+)
+
+2025-04-18 10:26:23 - Upload zakończony sukcesem
+Data: Array
+(
+    [success] => 1
+    [message] => Plik został przesłany pomyślnie
+    [file_path] => images/uploads/68020caf1e55f.jpg
+)
+
