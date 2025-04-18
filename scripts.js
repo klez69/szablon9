@@ -441,6 +441,134 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 		})
 	})
+
+	// Enhanced Google Maps handling
+	function initializeGoogleMaps() {
+		const mapContainer = document.getElementById('map-container')
+		const mapIframe = mapContainer.querySelector('.google-maps-iframe')
+		const mapPlaceholder = document.getElementById('map-placeholder')
+		const cookieConsent = localStorage.getItem('cookieConsent')
+
+		if (!cookieConsent || cookieConsent === 'rejected') {
+			// Hide map and show placeholder if no consent
+			if (mapIframe) mapIframe.classList.add('hidden')
+			if (mapPlaceholder) mapPlaceholder.classList.remove('hidden')
+		} else {
+			// Show map and hide placeholder if consent given
+			if (mapIframe) mapIframe.classList.remove('hidden')
+			if (mapPlaceholder) mapPlaceholder.classList.add('hidden')
+		}
+	}
+
+	function enableGoogleMaps() {
+		const mapContainer = document.getElementById('map-container')
+		const mapIframe = mapContainer.querySelector('.google-maps-iframe')
+		const mapPlaceholder = document.getElementById('map-placeholder')
+
+		// Set cookie consent
+		localStorage.setItem('cookieConsent', 'accepted')
+
+		// Show map
+		if (mapIframe) {
+			mapIframe.classList.remove('hidden')
+			// Reload iframe to ensure fresh load with new cookie settings
+			const currentSrc = mapIframe.src
+			mapIframe.src = ''
+			setTimeout(() => {
+				mapIframe.src = currentSrc
+			}, 50)
+		}
+
+		// Hide placeholder
+		if (mapPlaceholder) {
+			mapPlaceholder.classList.add('hidden')
+		}
+	}
+
+	// Enhanced Cookie and Maps Privacy Management
+	function initializePrivacyControls() {
+		const mapContainer = document.getElementById('map-container')
+		const mapIframe = mapContainer?.querySelector('.google-maps-iframe')
+		const mapPlaceholder = document.getElementById('map-placeholder')
+		const cookieConsent = document.getElementById('cookie-consent')
+		const acceptButton = document.getElementById('accept-cookies')
+		const rejectButton = document.getElementById('reject-cookies')
+
+		// Function to handle map visibility
+		function updateMapVisibility(showMap) {
+			if (!mapContainer || !mapIframe || !mapPlaceholder) return
+
+			if (showMap) {
+				mapPlaceholder.classList.add('hidden')
+				mapIframe.classList.remove('hidden')
+			} else {
+				mapPlaceholder.classList.remove('hidden')
+				mapIframe.classList.add('hidden')
+			}
+		}
+
+		// Check existing consent
+		const existingConsent = localStorage.getItem('cookieConsent')
+
+		// Show cookie banner if no choice made
+		if (!existingConsent) {
+			if (cookieConsent) cookieConsent.style.display = 'block'
+			updateMapVisibility(false)
+		} else {
+			updateMapVisibility(existingConsent === 'accepted')
+		}
+
+		// Handle accept button click
+		if (acceptButton) {
+			acceptButton.addEventListener('click', () => {
+				localStorage.setItem('cookieConsent', 'accepted')
+				if (cookieConsent) cookieConsent.style.display = 'none'
+				updateMapVisibility(true)
+
+				// Reload iframe to ensure fresh state
+				if (mapIframe) {
+					const currentSrc = mapIframe.src
+					mapIframe.src = 'about:blank'
+					setTimeout(() => {
+						mapIframe.src = currentSrc
+					}, 50)
+				}
+			})
+		}
+
+		// Handle reject button click
+		if (rejectButton) {
+			rejectButton.addEventListener('click', () => {
+				localStorage.setItem('cookieConsent', 'rejected')
+				if (cookieConsent) cookieConsent.style.display = 'none'
+				updateMapVisibility(false)
+			})
+		}
+	}
+
+	// Initialize privacy controls when DOM is ready
+	document.addEventListener('DOMContentLoaded', () => {
+		initializePrivacyControls()
+	})
+
+	// Function to enable maps (can be called from HTML)
+	function enableGoogleMaps() {
+		localStorage.setItem('cookieConsent', 'accepted')
+		const mapContainer = document.getElementById('map-container')
+		const mapIframe = mapContainer?.querySelector('.google-maps-iframe')
+		const mapPlaceholder = document.getElementById('map-placeholder')
+
+		if (mapPlaceholder) mapPlaceholder.classList.add('hidden')
+		if (mapIframe) {
+			mapIframe.classList.remove('hidden')
+			// Ensure fresh load
+			const currentSrc = mapIframe.src
+			mapIframe.src = 'about:blank'
+			setTimeout(() => {
+				mapIframe.src = currentSrc
+			}, 50)
+		}
+	}
 })
 
 // Funkcja aktualizująca galerię portfolio na stronie głównej z pliku baza.js
